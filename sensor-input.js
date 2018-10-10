@@ -36,8 +36,8 @@ class sensorInputHandler {
 
         field.innerHTML = newCondition;
     }
+    
     _updateView() {
-
         this._element.style.transform = `translateX(${this._transformProperties.translateX}%) translateY(${this._transformProperties.translateY}%) scale(${this._transformProperties.scale})`;
         this._element.style.filter = `brightness(${this._transformProperties.brightness}%)`;
     }
@@ -65,26 +65,31 @@ class sensorInputHandler {
         //         this._handleTranslation('translateY',event.touches[0].clientY);
         //     }
         // });
-        element.addEventListener('pointerenter', (event) => {
-
+        this._zoomField.parentElement.addEventListener('pointerdown', e=>{
+            this._resetProperties()
+        });
+        this._brightnessField.parentElement.addEventListener('pointerdown', e=>{
+            this._resetProperties()
+        });
+        this._element.addEventListener('pointerenter', (event) => {
+            this._resetConditions();
             event.currX = event.clientX;
             event.currY = event.clientY;
             this._pointerEvents.push(event);
         });
-        element.addEventListener('pointerleave', (event) => {
+        this._element.addEventListener('pointerleave', (event) => {
 
             this._pointerEvents = this._pointerEvents.filter(e => e.pointerId !== event.pointerId);
         });
 
-        element.addEventListener('pointermove', (event) => {
-
-            let currEvent = this._pointerEvents.find(e => e.pointerId === event.pointerId);
-            currEvent.prevX = currEvent.currX;
-            currEvent.prevY = currEvent.currY;
-            currEvent.currX = event.clientX;
-            currEvent.currY = event.clientY;
-            // console.log(currEvent.prevX, currEvent.prevY, currEvent.currX, currEvent.currY)
-            this._handlePointerMove(event)
+        this._element.addEventListener('pointermove', (event) => {
+                let currEvent = this._pointerEvents.find(e => e.pointerId === event.pointerId);
+                currEvent.prevX = currEvent.currX;
+                currEvent.prevY = currEvent.currY;
+                currEvent.currX = event.clientX;
+                currEvent.currY = event.clientY;
+                this._handlePointerMove(event);
+            
         });
 
     }
@@ -98,7 +103,7 @@ class sensorInputHandler {
 
         event.preventDefault();
         // console.log(event)
-        if (this._pointerEvents.length === 1) {
+        if (this._pointerEvents.length === 1 && this._transformProperties.scale > 1.0) {
             this._calcChanges('translateX', event.clientX);
         } else if (this._pointerEvents.length === 2) {
             let event1 = this._pointerEvents[0],
@@ -111,7 +116,7 @@ class sensorInputHandler {
             this._handlePointerRotation(event1, event2);
 
 
-            if (Math.abs(currDestance - prevDistance) > 2) {
+            if (Math.abs(currDestance - prevDistance) > 1) {
                 this._handleScaling(prevDistance, currDestance);
             } else {
             this._handlePointerRotation(event1, event2);
@@ -126,9 +131,9 @@ class sensorInputHandler {
     _handleScaling(prevDistance, currDestance) {
 
         if (currDestance > prevDistance) {
-            this._updateProperty('scale', this._transformProperties.scale + 0.1);
-        } else if (currDestance < prevDistance && this._transformProperties.scale >= 1.1) {
-            this._updateProperty('scale', this._transformProperties.scale - 0.1);
+            this._updateProperty('scale', this._transformProperties.scale + 0.05);
+        } else if (currDestance < prevDistance && this._transformProperties.scale >= 1.05) {
+            this._updateProperty('scale', this._transformProperties.scale - 0.05);
         }
         this._updateField(this._zoomField, (this._transformProperties.scale * 100).toPrecision(3));
     }
@@ -138,19 +143,15 @@ class sensorInputHandler {
     }
 
     _handlePointerRotation(point1, point2) {
-        // this._updateField(this._zoomField, 'i');
         let circleCenter = {
             'x': Math.round((point1.currX + point2.currX) / 2),
             'y': Math.round((point1.currY + point2.currY) / 2)
         }
-        // this._updateField(this._zoomField, 'circleCenter');
         let abscissaPoint = {
             'x': circleCenter.x * 2,
             'y': circleCenter.y
         }
-        // this._updateField(this._zoomField, 'abscissaPoint');
-        // this._updateField(this._brightnessField, 'abscissaPoint');
-        // console.log(circleCenter, abscissaPoint);
+
         let point1CurrAngle = this._calcAngleFromTriangle(
                 circleCenter.x, // distance between center and point on abscissa axis
                 this._calcDistance(circleCenter.x, circleCenter.y, point1.currX, point1.currY),
@@ -160,19 +161,34 @@ class sensorInputHandler {
                 circleCenter.x, // distance between center and point on abscissa axis
                 this._calcDistance(circleCenter.x, circleCenter.y, point1.prevX, point1.prevY),
                 this._calcDistance(abscissaPoint.x, abscissaPoint.y, point1.prevX, point1.prevY),
+            ),
+            point2CurrAngle = this._calcAngleFromTriangle(
+                circleCenter.x, // distance between center and point on abscissa axis
+                this._calcDistance(circleCenter.x, circleCenter.y, point2.currX, point2.currY),
+                this._calcDistance(abscissaPoint.x, abscissaPoint.y, point2.currX, point2.currY)
+            ),
+            point2PrevAngle = this._calcAngleFromTriangle(
+                circleCenter.x, // distance between center and point on abscissa axis
+                this._calcDistance(circleCenter.x, circleCenter.y, point2.prevX, point2.prevY),
+                this._calcDistance(abscissaPoint.x, abscissaPoint.y, point2.prevX, point2.prevY),
             );
 
-        let point1CurrSin = Math.sqrt(1-Math.pow(point1CurrAngle,2));
 
-        if ( (point1CurrSin >=0 && point1CurrAngle >= point1PrevAngle) || (point1CurrSin <=0 && point1CurrAngle <= point1PrevAngle) ) {
-            this._updateProperty('brightness', this._transformProperties.brightness+1);
+        if (point1.currY >= point2.currY) {//1: I, 2:  OR 1: II, 2: IV
+
+            if(point1CurrAngle >= point1PrevAngle && point2CurrAngle <= point2PrevAngle){
+                this._updateProperty('brightness', this._transformProperties.brightness-1);
+            }else{
+                this._updateProperty('brightness', this._transformProperties.brightness+1);
+            }
           
-        } else{
-         
-            this._updateProperty('brightness', this._transformProperties.brightness-1);
-            this._updateField(this._brightnessField, this._transformProperties.brightness);
+        }else { //1: III, 2: I OR 1: IV, 2: II
+            if(point1CurrAngle <= point1PrevAngle && point2CurrAngle >= point2PrevAngle){
+                this._updateProperty('brightness', this._transformProperties.brightness-1);
+            }else{
+                this._updateProperty('brightness', this._transformProperties.brightness+1);
+            }
         }
-        this._updateField(this._brightnessField, this._transformProperties.brightness);
         this._updateField(this._brightnessField, this._transformProperties.brightness);
     }
 
@@ -192,9 +208,11 @@ class sensorInputHandler {
     }
 
     _resetProperties() {
-
-        _updateField(this._zoomField, 100);
-        _updateField(this._brightnessField, 100);
+        // console.log(this);
+        // this._zoomField.innerHTML = 100;
+        // this._brightnessField.innerHTML = 100;
+        this._updateField(this._zoomField, 100);
+        this._updateField(this._brightnessField, 100);
         for (let prop in this._transformProperties) {
             this._updateProperty(prop, this._startProperties[prop]);
         }
