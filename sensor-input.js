@@ -48,23 +48,7 @@ class sensorInputHandler {
         this._updateView();
     }
     setEventHandlers() {
-        // this._zoomField.addEventListener('touchstart', this._resetProperties);
-        // this._brightnessField.addEventListener('touchstart', this._resetProperties);
-        // this._element.addEventListener('touchstart', this._resetConditions);
-        // this._element.addEventListener('gesturechange', (event) => {
-        //     this._handleTouchRotation(event.rotation);
-        //     if (event.scale > 1.0) {
-        //         this._updateProperty('scale', event.scale);
-        //         this._updateField(this._zoomField, (event.scale * 100).toPrecision(3));
-        //     }
-        // });
 
-        // element.addEventListener('touchmove', (event) => {
-        //     if (event.touches.length === 1 ){
-        //         this._handleTranslation('translateX',event.touches[0].clientX);
-        //         this._handleTranslation('translateY',event.touches[0].clientY);
-        //     }
-        // });
         this._zoomField.parentElement.addEventListener('pointerdown', e=>{
             this._resetProperties()
         });
@@ -102,7 +86,6 @@ class sensorInputHandler {
     _handlePointerMove(event) {
 
         event.preventDefault();
-        // console.log(event)
         if (this._pointerEvents.length === 1 && this._transformProperties.scale > 1.0) {
             this._calcChanges('translateX', event.clientX);
         } else if (this._pointerEvents.length === 2) {
@@ -208,9 +191,6 @@ class sensorInputHandler {
     }
 
     _resetProperties() {
-        // console.log(this);
-        // this._zoomField.innerHTML = 100;
-        // this._brightnessField.innerHTML = 100;
         this._updateField(this._zoomField, 100);
         this._updateField(this._brightnessField, 100);
         for (let prop in this._transformProperties) {
