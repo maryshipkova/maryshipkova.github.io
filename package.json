@@ -8,7 +8,8 @@
     "devserver": "live-server --browser=chrome",
     "start": "npm-run-all --parallel devserver watch:sass",
     "lint": "tslint src/*.ts --fix",
-    "tsc": "tsc src/template.ts src/TemplateFactory.ts src/IEventModel.ts src/IProperty.ts src/sensor-input.ts src/SensorInputHandler.ts src/SensorInputInterfaces.ts --outDir dist"
+    "tsc": "tsc src/template.ts src/TemplateFactory.ts src/IEventModel.ts src/IProperty.ts src/sensor-input.ts src/SensorInputHandler.ts src/SensorInputInterfaces.ts --outDir dist",
+    "bundle":"browserify dist/template.js dist/TemplateFactory.js dist/IEventModel.js dist/IProperty.js dist/sensor-input.js dist/SensorInputHandler.js dist/SensorInputInterfaces.js -o dist/bundle.js"
   },
   "author": "Maria Shipkova",
   "license": "ISC",
