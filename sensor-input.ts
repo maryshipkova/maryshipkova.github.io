@@ -15,6 +15,14 @@ const INITIAL_CONDITIONS = {
     'brightness': "",
 }
 class sensorInputHandler {
+    private _transformProperties: any;
+    private _element: any;
+    private _prevConditions: any;
+    private _startProperties: any;
+    private _brightnessField: any;
+    private _zoomField: any;
+    private _pointerEvents: any[];
+    private _translateTrack: any;
 
     constructor(element, INITIAL_CONDITIONS, transformProperties, zoomField, brightnessField, translateTrack) {
 
