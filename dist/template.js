@@ -1,20 +1,19 @@
-import {IEventModel} from "./IEventModel";
-import {IProperty} from "./IProperty";
-import {TemplateFactory} from "./TemplateFactory";
-
-const DATA: { events: IEventModel[] } = {
+"use strict";
+exports.__esModule = true;
+var TemplateFactory_1 = require("./TemplateFactory");
+var DATA = {
     events: [{
-        type: "info",
-        title: "Еженедельный отчет по расходам ресурсов",
-        source: "Сенсоры потребления",
-        time: "19:00, Сегодня",
-        description: "Так держать! За последнюю неделю вы потратили на 10% меньше ресурсов, чем неделей ранее.",
-        icon: "stats",
-        data: {
-            image: "Richdata.png",
+            type: "info",
+            title: "Еженедельный отчет по расходам ресурсов",
+            source: "Сенсоры потребления",
+            time: "19:00, Сегодня",
+            description: "Так держать! За последнюю неделю вы потратили на 10% меньше ресурсов, чем неделей ранее.",
+            icon: "stats",
+            data: {
+                image: "Richdata.png"
+            },
+            size: "l"
         },
-        size: "l",
-    },
         {
             type: "info",
             title: "Дверь открыта",
@@ -22,7 +21,7 @@ const DATA: { events: IEventModel[] } = {
             time: "18:50, Сегодня",
             description: null,
             icon: "key",
-            size: "s",
+            size: "s"
         },
         {
             type: "info",
@@ -31,7 +30,7 @@ const DATA: { events: IEventModel[] } = {
             time: "18:45, Сегодня",
             description: null,
             icon: "robot-cleaner",
-            size: "s",
+            size: "s"
         },
         {
             type: "info",
@@ -40,7 +39,7 @@ const DATA: { events: IEventModel[] } = {
             time: "18:45, Сегодня",
             description: null,
             icon: "router",
-            size: "s",
+            size: "s"
         },
         {
             type: "info",
@@ -52,8 +51,8 @@ const DATA: { events: IEventModel[] } = {
             size: "m",
             data: {
                 temperature: 24,
-                humidity: 80,
-            },
+                humidity: 80
+            }
         },
         {
             type: "critical",
@@ -62,7 +61,7 @@ const DATA: { events: IEventModel[] } = {
             time: "18:21, Сегодня",
             description: "В комнате открыто окно, закройте его и повторите попытку",
             icon: "ac",
-            size: "m",
+            size: "m"
         },
         {
             type: "info",
@@ -77,10 +76,10 @@ const DATA: { events: IEventModel[] } = {
                 artist: "Florence & The Machine",
                 track: {
                     name: "Big God",
-                    length: "4:31",
+                    length: "4:31"
                 },
-                volume: 80,
-            },
+                volume: 80
+            }
         },
         {
             type: "info",
@@ -91,8 +90,8 @@ const DATA: { events: IEventModel[] } = {
             icon: "fridge",
             size: "m",
             data: {
-                buttons: ["Да", "Нет"],
-            },
+                buttons: ["Да", "Нет"]
+            }
         },
         {
             type: "info",
@@ -101,7 +100,7 @@ const DATA: { events: IEventModel[] } = {
             time: "16:22, Сегодня",
             description: "Ура! Устройство «Оконный сенсор» снова в строю!",
             icon: "battery",
-            size: "s",
+            size: "s"
         },
         {
             type: "critical",
@@ -111,9 +110,9 @@ const DATA: { events: IEventModel[] } = {
             description: "Робопылесос не смог сменить свое местоположение в течение последних 3 минут. Похоже, ему нужна помощь.",
             icon: "cam",
             data: {
-                image: "cleaner.jpg",
+                image: "cleaner.jpg"
             },
-            size: "l",
+            size: "l"
         },
         {
             type: "info",
@@ -122,92 +121,86 @@ const DATA: { events: IEventModel[] } = {
             time: "16:20, Сегодня",
             description: null,
             icon: "kettle",
-            size: "s",
+            size: "s"
         },
-    ],
+    ]
 };
-
-const PROPERTIES: IProperty[] = [
+var PROPERTIES = [
     {
         name: "size",
         selector: ".card",
         neededChild: false,
-        className: "card card__$meow",
+        className: "card card__$meow"
     },
     {
         name: "type",
         selector: ".card__type--top",
         neededChild: false,
-        className: "card__type--top card__$meow",
+        className: "card__type--top card__$meow"
     },
     {
         name: "info",
         selector: ".card__type--bottom",
-        neededChild: true,
+        neededChild: true
     },
     {
         name: "title",
         selector: ".card__title",
-        neededChild: true,
+        neededChild: true
     },
     {
         name: "source",
         selector: ".card__source",
-        neededChild: true,
+        neededChild: true
     },
     {
         name: "time",
         selector: ".card__time",
-        neededChild: true,
+        neededChild: true
     },
     {
         name: "description",
         selector: ".card__description",
         neededChild: false,
         optional: true,
-        innerHtml: '<p class="card--paragraph">$meow</p>',
+        innerHtml: '<p class="card--paragraph">$meow</p>'
     },
     {
         name: "icon",
         selector: ".card__icon",
         neededChild: true,
-        innerHtml: '<use xlink:href="assets/$meow.svg#Events"></use>',
+        innerHtml: '<use xlink:href="assets/$meow.svg#Events"></use>'
     },
     {
         name: "data",
         selector: ".card__data",
         neededChild: true,
         optional: true,
-        children: [],
+        children: []
     },
 ];
-
-const cardTemplate: HTMLTemplateElement | null = document.querySelector("#card-template");
-
-const cardTemplateFactory = new TemplateFactory(cardTemplate, PROPERTIES);
-
+var cardTemplate = document.querySelector("#card-template");
+var cardTemplateFactory = new TemplateFactory_1.TemplateFactory(cardTemplate, PROPERTIES);
 fetch("http://127.0.0.1:3000/api/events", {
     method: "POST",
     headers: {
         "Accept": "application/json",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
     },
-    body: JSON.stringify({type: "info:critical"}),
-
-}).then((response) => {
+    body: JSON.stringify({ type: "info:critical" })
+}).then(function (response) {
     // console.log(response.json());
     return response.json();
-}).then((dataFromServer) => {
+}).then(function (dataFromServer) {
     if (dataFromServer) {
         console.log("getting data from server");
         cardTemplateFactory.renderContent(dataFromServer.events);
-
-    } else {
+    }
+    else {
         console.log("getting data from local source, server is offline");
         cardTemplateFactory.renderContent(DATA.events);
     }
-
-}).catch((e) => {
+})["catch"](function (e) {
     console.log("getting data from local source, server is offline");
     cardTemplateFactory.renderContent(DATA.events);
 });

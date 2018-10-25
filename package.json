@@ -8,7 +8,7 @@
     "devserver": "live-server --browser=chrome",
     "start": "npm-run-all --parallel devserver watch:sass",
     "lint": "tslint src/*.ts --fix",
-    "tsc": "tsc src/template.ts"
+    "tsc": "tsc src/template.ts src/TemplateFactory.ts src/IEventModel.ts src/IProperty.ts src/sensor-input.ts src/SensorInputHandler.ts src/SensorInputInterfaces.ts --outDir dist"
   },
   "author": "Maria Shipkova",
   "license": "ISC",
