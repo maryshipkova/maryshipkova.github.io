@@ -29,42 +29,43 @@ export class SensorInputHandler {
             });
         }
 
-        if (this.brightnessField.parentElement) {
+        if (this.brightnessField && this.brightnessField.parentElement) {
             this.brightnessField.parentElement.addEventListener("pointerdown", (e) => {
                 this._resetProperties();
             });
         }
-
-        this.element.addEventListener("pointerenter", (event) => {
-            this._resetConditions();
-            const currEvent: IPoinerEvent = event as IPoinerEvent;
-            currEvent.currX = event.clientX;
-            currEvent.currY = event.clientY;
-            this.pointerEvents.push(currEvent);
-        });
-        this.element.addEventListener("pointerleave", (event) => {
-
-            this.pointerEvents = this.pointerEvents.filter((e) => e.pointerId !== event.pointerId);
-        });
-
-        this.element.addEventListener("pointermove", (event) => {
-            let currEvent: IPoinerEvent = event as IPoinerEvent;
-            this.pointerEvents.forEach((e) => {
-                if (e.pointerId === event.pointerId) {
-                    currEvent = e;
-                    return e;
-                }
-            });
-
-            if (currEvent) {
-                currEvent.prevX = currEvent.currX;
-                currEvent.prevY = currEvent.currY;
+        if (this.element) {
+            this.element.addEventListener("pointerenter", (event) => {
+                this._resetConditions();
+                const currEvent: IPoinerEvent = event as IPoinerEvent;
                 currEvent.currX = event.clientX;
                 currEvent.currY = event.clientY;
-                this._handlePointerMove(currEvent);
-            }
+                this.pointerEvents.push(currEvent);
+            });
+            this.element.addEventListener("pointerleave", (event) => {
 
-        });
+                this.pointerEvents = this.pointerEvents.filter((e) => e.pointerId !== event.pointerId);
+            });
+
+            this.element.addEventListener("pointermove", (event) => {
+                let currEvent: IPoinerEvent = event as IPoinerEvent;
+                this.pointerEvents.forEach((e) => {
+                    if (e.pointerId === event.pointerId) {
+                        currEvent = e;
+                        return e;
+                    }
+                });
+
+                if (currEvent) {
+                    currEvent.prevX = currEvent.currX;
+                    currEvent.prevY = currEvent.currY;
+                    currEvent.currX = event.clientX;
+                    currEvent.currY = event.clientY;
+                    this._handlePointerMove(currEvent);
+                }
+
+            });
+        }
 
     }
 
