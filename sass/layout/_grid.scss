@@ -2,7 +2,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: 5.75rem 1fr 4rem;
-    grid-template-columns: minmax($grid-gap, 1fr) max-content minmax($grid-gap, 1fr) ;
+    grid-template-columns: $grid-gap 1fr $grid-gap ;
     grid-template-areas:"header header header" 
                         ". content ."
                         "footer footer footer";
@@ -17,35 +17,50 @@
     }
 
     .content{
-        grid-area: content; 
+        grid-area: content;
 
-        &__summary{
-            width: 100%;
-            display: grid;
-            grid-template-rows:  minmax(3.25rem,5.75rem) minmax(1rem,1.81rem) minmax(21.69rem,23.19rem) minmax(1rem,1.81rem)   10.31rem minmax(3rem,4rem);
-            grid-template-columns: minmax(1rem, $edge-margin)  minmax(39.375rem,1fr) minmax(1rem,1.63rem) minmax($card-width,1fr)  minmax(.5rem, $edge-margin);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas:". page .";
+        grid-template-columns: minmax(0,1fr) max-content minmax(0,1fr) ;
 
-            .main{
-                grid-row: 3;
-                grid-column: 2;
-            }
-            
-            .scenarios{
-                grid-row: 3;
-                grid-column: 4;
-            }
-            .devices{
-                grid-row: 5;
-                grid-column: 2/-1;
-            }
-        }
+
     }
     .footer{
         grid-area: footer; 
     }
 
 }
+.events-page {
+    width: 64rem;
+    grid-area: page;
 
+}
+.summary-page{
+    grid-area: page;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows:   minmax(1rem,1.81rem) minmax(21.69rem,23.19rem) $grid-gap minmax(1rem,1.81rem) 7rem ;
+    grid-template-columns: minmax(39.375rem,1fr) minmax(1rem,1.63rem) minmax($card-width,1fr) ;
+    grid-template-areas:". . ."
+                        "main . scenarios"
+                        ". . ."
+                        "devices devices devices"
+                        ". . .";
+
+    .main{
+        grid-area: main;
+    }
+
+    .scenarios{
+        grid-area: scenarios;
+    }
+    .devices{
+        grid-area: devices;
+    }
+}
 
 // .grid{
 //     height: 100%;
