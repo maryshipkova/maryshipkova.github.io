@@ -8,76 +8,76 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Яндекс.Дом</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 </head>
 
 <body>
-    <div class="grid">
-        <header class="header">
-            <div class="header__logo">
-                <img srcset="assets/Logo@1x-min.png 1x, assets/Logo@2x-min.png 2x" src="assets/Logo@2x-min.png" alt="Logo" class="logo">
-            </div>
-            <nav class="header__nav">
-                <label for="header-toggle" class="header__nav__toggle">
-                    <img srcset="assets/icon_list_m-min.png 1x, assets/icon_list_m@2x-min.png 2x" src="assets/icon_list_m-min.png"
-                        alt="Logo" class="icon--header-nav">
-                </label>
-                <input type="checkbox" class="header__nav__checkbox" id="header-toggle">
-                <ul class="header__nav__list">
-                    <li class="header__nav__item">
-                        <a href="#" class="text--nav-link link-active">События</a>
+        <div class="grid">
+            <header class="header">
+                <div class="header__logo">
+                    <img srcset="assets/Logo@1x-min.png 1x, assets/Logo@2x-min.png 2x" src="assets/Logo@2x-min.png" alt="Logo"
+                        class="logo">
+                </div>
+                <nav class="header__nav">
+                    <label for="header-toggle" class="header__nav__toggle">
+                        <img srcset="assets/icon_list_m-min.png 1x, assets/icon_list_m@2x-min.png 2x" src="assets/icon_list_m-min.png"
+                            alt="Logo" class="icon--header-nav">
+                    </label>
+                    <input type="checkbox" class="header__nav__checkbox" id="header-toggle">
+                    <ul class="header__nav__list">
+                        <li class="header__nav__item">
+                            <a href="#" class="text--nav-link link-active">События</a>
+                        </li>
+                        <li class="header__nav__item">
+                            <a href="#" class="text--nav-link">Сводка</a>
+                        </li>
+                        <li class="header__nav__item">
+                            <a href="#" class="text--nav-link">Устройства</a>
+                        </li>
+                        <li class="header__nav__item">
+                            <a href="#" class="text--nav-link">Сценарии</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main class="content">
+                <div class="content__header">
+                    <h1 class="heading--primary">
+                        Лента событий
+                    </h1>
+                </div>
+                <section class="events" id="events">
+
+                </section>
+            </main>
+
+
+            <footer class="footer">
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#" class="text--footer">Помощь</a>
                     </li>
-                    <li class="header__nav__item">
-                        <a href="#" class="text--nav-link">Сводка</a>
+                    <li class="footer__item">
+                        <a href="#" class="text--footer">Обратная связь</a>
                     </li>
-                    <li class="header__nav__item">
-                        <a href="#" class="text--nav-link">Устройства</a>
+                    <li class="footer__item">
+                        <a href="#" class="text--footer">Разработчикам</a>
                     </li>
-                    <li class="header__nav__item">
-                        <a href="#" class="text--nav-link">Сценарии</a>
+                    <li class="footer__item">
+                        <a href="#" class="text--footer">Условия использования</a>
+                    </li>
+                    <li class="footer__item">
+                        <a target="blank" href="https://docviewer.yandex.ru/view/1130000031416100/?*=0XCqW4FslxHh%2FIKRNc5ABV7dPqh7InVybCI6InlhLXdpa2k6Ly93aWtpLWFwaS55YW5kZXgucnUvc2hyaS0yMDE4LWlpL2hvbWV3b3JrL2FkYXB0aXZuYWphLXZqb3JzdGthL2xpY2Vuc2UucGRmIiwidGl0bGUiOiJsaWNlbnNlLnBkZiIsInVpZCI6IjExMzAwMDAwMzE0MTYxMDAiLCJ5dSI6IjIzMTQyNzc1NDE1MTIyOTMwMDkiLCJub2lmcmFtZSI6ZmFsc2UsInRzIjoxNTM4ODQxMjA5NjIzfQ%3D%3D"
+                            class="text--footer">Лицензия</a>
+                    </li>
+
+                    <li class="footer__item">
+                        <a href="#" class="text--footer">&copy; 2001–2017 ООО «Яндекс»</a>
                     </li>
                 </ul>
-            </nav>
-        </header>
-
-        <main class="content">
-            <div class="content__header">
-                <h1 class="heading--primary">
-                    Лента событий
-                </h1>
-            </div>
-            <section class="events" id="events">
-
-            </section>
-        </main>
-
-
-        <footer class="footer">
-            <ul class="footer__list">
-                <li class="footer__item">
-                    <a href="#" class="text--footer">Помощь</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#" class="text--footer">Обратная связь</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#" class="text--footer">Разработчикам</a>
-                </li>
-                <li class="footer__item">
-                    <a href="#" class="text--footer">Условия использования</a>
-                </li>
-                <li class="footer__item">
-                    <a  target="blank" href="https://docviewer.yandex.ru/view/1130000031416100/?*=0XCqW4FslxHh%2FIKRNc5ABV7dPqh7InVybCI6InlhLXdpa2k6Ly93aWtpLWFwaS55YW5kZXgucnUvc2hyaS0yMDE4LWlpL2hvbWV3b3JrL2FkYXB0aXZuYWphLXZqb3JzdGthL2xpY2Vuc2UucGRmIiwidGl0bGUiOiJsaWNlbnNlLnBkZiIsInVpZCI6IjExMzAwMDAwMzE0MTYxMDAiLCJ5dSI6IjIzMTQyNzc1NDE1MTIyOTMwMDkiLCJub2lmcmFtZSI6ZmFsc2UsInRzIjoxNTM4ODQxMjA5NjIzfQ%3D%3D"
-                        class="text--footer">Лицензия</a>
-                </li>
-
-                <li class="footer__item">
-                    <a href="#" class="text--footer">&copy; 2001–2017 ООО «Яндекс»</a>
-                </li>
-            </ul>
-        </footer>
-    </div><!-- grid -->
-
+            </footer>
+        </div><!-- grid -->
+        
     <template id="card-template">
         <div class="card">
             <div class="card__hover-icon card__hover-icon--top">
@@ -93,7 +93,7 @@
             <div class="card__type--top card__info">
                 <div class="card__header">
                     <div class="card__icon">
-                        <svg class="icon--card" viewBox = "-10 -15 62 65"  preserveAspectRatio="xMinYMid" >
+                        <svg class="icon--card" viewBox="-10 -15 62 65" preserveAspectRatio="xMinYMid">
                             <use xlink:href=""></use>
                         </svg>
                     </div>
@@ -115,9 +115,9 @@
                     <p class="card--paragraph"></p>
                 </div>
                 <div class="card__data">
-                        <div class="card__data__graph">
-                                <img class="card__data__image--img" src="#" alt="" touch-action="none">
-                            </div>
+                    <div class="card__data__graph">
+                        <img class="card__data__image--img" src="#" alt="" touch-action="none">
+                    </div>
 
                     <div class="card__data__image-box">
                         <div class="card__data__image">
@@ -193,7 +193,9 @@
 
         </div>
     </template>
-    <script>var exports = {};</script>
+    <script>
+        var exports = {};
+    </script>
     <script src="dist/bundle.js"></script>
 </body>
 

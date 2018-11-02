@@ -1,0 +1,39 @@
+.scenarios{
+    min-width:$card-width;
+    height: 100%;
+    &__heading{
+        display: flex;
+    }
+    &__content{
+        height: 21rem;
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(3, 6.25rem);
+        grid-template-columns: repeat(var(--scenarios-cols), $card-width); 
+        grid-auto-columns: $card-width;
+        grid-gap: 0.94rem;
+        align-items: start;
+        padding: 3px;
+        padding-bottom: 5px;
+        @include responsive(phone) {
+            height: 6.25rem;
+            display: flex;
+            overflow-x: scroll;
+        }
+
+        &>*{
+            flex-shrink: 0;
+            @include responsive(phone) {
+                margin-right: 1.25rem;
+            }
+        }
+
+    }
+
+    &__icons{
+        margin-left: auto;
+        @include responsive(phone) {
+            display: none;
+        }
+    }
+}

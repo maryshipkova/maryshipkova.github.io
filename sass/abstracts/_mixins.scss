@@ -1,3 +1,20 @@
+@mixin properties {
+    padding: 0.45rem 0.75rem 0.5rem 0.94rem;
+    margin-right: .63rem;
+    background-color: $card-color;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $button-active-color;
+    }
+    @include responsive(phone) {
+        flex-shrink: 0;
+        padding: 0.44rem 0.75rem 0.5rem 0.94rem;
+    }
+}
+
 @mixin responsive($breakpoint) {
     @if $breakpoint==phone {
         @media only screen and (max-width: 37.5em) {

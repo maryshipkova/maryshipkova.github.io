@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- --browser=firefox -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Яндекс Дом</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="grid__container">
+        <div class="grid">
+            <header class="header">
+                <div class="header__logo">
+                    <img srcset="assets/Logo@1x.png 1x, assets/Logo@2x.png 2x" src="assets/Logo@2x.png" alt="Logo"
+                        class="logo">
+                </div>
+                <nav class="header__nav">
+                    <label for="header-toggle" class="header__nav__toggle">
+                        <span class="icon--header-nav">&nbsp;</span>
+                    </label>
+                    <input type="checkbox" class="header__nav__checkbox" id="header-toggle">
+                    <ul class="header__nav__list">
+                        <li class="header__nav__item item-active">
+                            <a href="#" class="header-nav-link link-active">Сводка</a>
+                        </li>
+                        <li class="header__nav__item">
+                            <a href="#" class="header-nav-link">Устройства</a>
+                        </li>
+                        <li class="header__nav__item">
+                            <a href="#" class="header-nav-link">Сценарии</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- main -->
+            <main class="content content__summary">
+                    <section class="main">
+                            <div class="section-heading">
+                                <h3 class="heading-section">Главное</h3>
+                            </div>
+                            <div class="main__content">
+                                <div class="main__status">
+                                    <div class="main__status--greeting">
+                                        <h2 class="heading-greeting">Привет, Геннадий!</h2>
+                                    </div>
+                                    <div class="main__status--house">
+                                        <p class="paragraph-1">Двери и окна закрыты, сигнализация включена.</p>
+                                    </div>
+                                    <div class="main__status--temperature">
+            
+                                        <div class="temperature--heading">
+                                            <h4 class="heading--place">Дома</h4>
+                                        </div>
+                                        <div class="temperature--heading">
+                                            <h4 class="heading--place">За окном</h4>
+                                        </div>
+            
+                                        <div class="temperature--value">
+                                            <h1 class="heading-temperature">+23</h1>
+                                        </div>
+                                        <div class="temperature--value">
+                                            <h1 class="heading-temperature">+19
+                                                <svg class="icon--cloud">
+                                                    <use xlink:href="assets/cloud-drizzle.svg#Final"></use>
+                                                </svg>
+                                            </h1>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <div class="main__schedule" onscroll="changeMainSliderVisibility(event)">
+                                    <a href="#popup-temperature" class="card card__f card--main">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_temperature.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Philips Cooler</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Начнет охлаждать в 16:30</p>
+                                        </div>
+                                    </a>
+                                    <a href="#popup-light" class="card card__f card--main">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Xiaomi Yeelight LED Smart Bulb</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Включится в 17:00</p>
+                                        </div>
+                                    </a>
+                                    <a href="#popup-floor" class="card card__f card--main">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_temperature_2.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Xiaomi Warm Floor</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Включено</p>
+                                        </div>
+                                    </a>
+                                    <div class="main__schedule__slider" id="schedule__slider">
+                                        <img srcset="assets/Icons/Arrow_Double/M.png 1x, assets/Icons/Arrow_Double/M@2x.png 2x" src="assets/Icons/Arrow_Double/M@2x.png"
+                                            alt="slider" class="icon--double-arrow">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- /main -->
+                        <!-- scenarios -->
+                        <section class="scenarios">
+                            <div class="scenarios__heading">
+                                <div class="section-heading">
+                                    <h3 class="heading-section">Избранные сценарии</h3>
+                                </div>
+                                <div class="scenarios__icons">
+                                    <div class="nav-arrows">
+                                        <div class="arrow arrow--left carousel__prev carousel__prev--scenarios">
+                                            <svg class="icon--arrow">
+                                                <use xlink:href="assets/Icons/Arrow_Right/MCopy@1x.svg#icon_arrow-right_m"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="arrow arrow--right carousel__next carousel__next--scenarios">
+                                            <svg class="icon--arrow">
+                                                <use xlink:href="assets/Icons/Arrow_Right/MCopy@1x.svg#icon_arrow-right_m"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- scenarios__heading -->
+                            <div class="carousel__wrap carousel__wrap--scenarios">
+                                <div class="scenarios__content carousel__container carousel__container--scenarios">
+                                    <div class="card card__f card--scenarios">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun_2.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Выключить весь свет в доме и во дворе</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card  card__f card--scenarios">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_scheduled.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Я ухожу</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card card__f card--scenarios">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun_2.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Включить свет в коридоре</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card card__f card--scenarios">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_temperature_2.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Набрать горячую ванну</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Начнётся в 18:00</p>
+                                        </div>
+                                    </div>
+                                    <a href="#popup-floor" class="card card__f card--scenarios">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_temperature_2.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Сделать пол тёплым во всей квартире</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- scenarios__content -->
+                        </section>
+                        <!-- /scenarios -->
+            
+                        <!-- devices -->
+                        <section class="devices">
+                            <div class="devices__header">
+                                <div class="section-heading">
+                                    <h3 class="heading-section">Избранные устройства</h3>
+                                </div>
+                                <div class="devices__filters">
+                                    <div class=" devices__filter filter-active">
+                                        <label for="filter-toggle">
+                                            <h5 class="heading--filter">Все
+                                                <svg class="icon--arrow-down" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                    enable-background="new 0 0 129 129">
+                                                    <g>
+                                                        <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" />
+                                                    </g>
+                                                </svg>
+                                            </h5>
+                                        </label>
+                                    </div>
+                                    <input type="checkbox" class="devices__filters__checkbox" id="filter-toggle">
+                                    <div class="devices__filters__list">
+                                        <div class="devices__filter">
+                                            <h5 class="heading--filter">Кухня</h5>
+                                        </div>
+                                        <div class="devices__filter">
+                                            <h5 class="heading--filter">Зал</h5>
+                                        </div>
+                                        <div class="devices__filter">
+                                            <h5 class="heading--filter">Лампочки</h5>
+                                        </div>
+                                        <div class="devices__filter">
+                                            <h5 class="heading--filter">Камеры</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="devices__icons">
+                                    <div class="nav-arrows">
+                                        <div class="arrow arrow--left carousel__prev carousel__prev--devices">
+                                            <svg class="icon--arrow">
+                                                <use xlink:href="assets/Icons/Arrow_Right/MCopy@1x.svg#icon_arrow-right_m"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="arrow arrow--right carousel__next carousel__next--devices">
+                                            <svg class="icon--arrow">
+                                                <use xlink:href="assets/Icons/Arrow_Right/MCopy@1x.svg#icon_arrow-right_m"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel__wrap carousel__wrap--devices">
+                                <div class="devices__list carousel__container carousel__container--devices">
+                                    <a href="#popup-light" class="card card__f card--devices">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun_2.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Xiaomi Yeelight LED Smart Bulb</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Включено</p>
+                                        </div>
+                                    </a>
+                                    <a href="#popup-light" class="card card__f card--devices">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">D-Link Omna 180 Cam</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Включится в 17:00</p>
+                                        </div>
+                                    </a>
+                                    <a href="#popup-temperature" class="card card__f card--devices">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_temperature.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Elgato Eve Degree Connected</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Выключено до 17:00</p>
+                                        </div>
+                                    </a>
+                                    <a href="#popup-light" class="card card__f card--devices">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">LIFX Mini Day & Dusk A60 E27</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Включится в 17:00</p>
+                                        </div>
+                                    </a>
+                                    <a href="#popup-light" class="card card__f card--devices">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun_2.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Xiaomi Mi Air Purifier 2S</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Включено</p>
+                                        </div>
+                                    </a>
+                                    <a href="#popup-light" class="card card__f card--devices">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Philips Zhirui</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Выключено</p>
+                                        </div>
+                                    </a>
+                                    <a href="#popup-light" class="card card__f card--devices">
+                                        <div class="card__icon">
+                                            <svg class="icon--device">
+                                                <use xlink:href="assets/icon_sun_2.svg#Final"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="card__title">
+                                            <h5 class="heading-card">Xiaomi Mi Air Purifier 2S</h5>
+                                        </div>
+                                        <div class="card__text">
+                                            <p class="paragraph-2">Включено</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- /devices -->
+            </main>
+
+
+            <footer class="footer">
+                <ul class="footer__list">
+                    <li class="footer__item">
+                        <a href="#" class="footer-text">Помощь</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer-text">Обратная связь</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer-text">Разработчикам</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="#" class="footer-text">Условия использования</a>
+                    </li>
+                    <li class="footer__item">
+                        <p class="footer-text">&copy; 2001–2017 ООО «Яндекс»</p>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+        <!-- /grid       -->
+    </div>
+    <!-- popup light -->
+    <div class="popup" id="popup-light">
+        <div class="popup__container popup__container--light">
+            <div class="popup__content">
+                <div class="popup__header">
+
+                    <div class="popup__header--left">
+                        <div class="popup__heading">
+                            <h2 class="heading-popup">
+                                Xiaomi Yeelight LED Smart Bulb
+                            </h2>
+                        </div>
+                        <div class="popup__header__status-text">
+                            <p class="paragraph-1">Включится в 17:00</p>
+                        </div>
+                    </div>
+
+                    <div class="popup__header--right">
+                        <div class="popup__header__icon">
+                            <img srcset="assets/icon_sun@1x.png 1x, assets/icon_sun@2x.png 2x" src="assets/icon_sun@2x.png"
+                                class="icon--popup" alt="icon sun">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /popup__header -->
+                <div class="popup__settings">
+                    <div class="popup__settings--item">
+                        <h5 class="heading-settings">Вручную</h5>
+                    </div>
+                    <div class="popup__settings--item">
+                        <h5 class="heading-settings">Дневной свет</h5>
+                    </div>
+                    <div class="popup__settings--item">
+                        <h5 class="heading-settings">Вечерний свет</h5>
+                    </div>
+                    <div class="popup__settings--item">
+                        <h5 class="heading-settings">Рассвет</h5>
+                    </div>
+                </div>
+                <div class="popup__controls">
+                    <div class="popup__slider--before popup__slider--before--light">
+                        <svg class="icon--popup-slider">
+                            <use xlink:href="assets/icon_sun_min.svg#Final"></use>
+                        </svg>
+                    </div>
+                    <input type="range" min="1" max="100" value="70" class="popup__slider popup__slider--light">
+                    <div class="popup__slider--after popup__slider--after--light">
+                        <svg class="icon--popup-slider">
+                            <use xlink:href="assets/icon_sun_max.svg#Final"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__buttons--container">
+                <div class="popup__buttons--content">
+                    <a href="#" class="btn">
+                        <h3 class="heading--button">
+                            Применить
+                        </h3>
+                    </a>
+                    <a href="#" class="btn">
+                        <h3 class="heading--button">
+                            Закрыть
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /popup light-->
+
+    <!-- popup temperature -->
+    <div class="popup" id="popup-temperature">
+        <div class="popup__container popup__container--temperature">
+            <div class="popup__content">
+                <div class="popup__header">
+
+                    <div class="popup__header--left">
+                        <div class="popup__heading">
+                            <h2 class="heading-popup">
+                                Elgato Eve Degree Connected
+                            </h2>
+                        </div>
+                        <div class="popup__header__status-text">
+                            <p class="paragraph-1">Включено</p>
+                        </div>
+                    </div>
+
+                    <div class="popup__header--right">
+                        <div class="popup__header__temperature">
+                            <h1 class="heading-temperature">+23</h1>
+                        </div>
+                        <div class="popup__header__icon">
+                            <img srcset="assets/icon_temperature_2@1x.png 1x, assets/icon_temperature_2@2x.png 2x" src="assets/icon_temperature_2@2x"
+                                class="icon--popup" alt="icon temperature 2">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="popup__settings">
+                    <div class="popup__settings--item">
+                        <h5 class="heading-settings">Вручную</h5>
+                    </div>
+                    <div class="popup__settings--item">
+                        <h5 class="heading-settings">Холодно</h5>
+                    </div>
+                    <div class="popup__settings--item">
+                        <h5 class="heading-settings">Тепло</h5>
+                    </div>
+                    <div class="popup__settings--item">
+                        <h5 class="heading-settings">Жарко</h5>
+                    </div>
+                </div>
+                <div class="popup__controls">
+                    <div class="popup__slider--before popup__slider--before--temperature">
+                        <h3 class="heading--popup-slider">
+                            &ndash;10
+                        </h3>
+                    </div>
+                    <input type="range" min="1" max="100" value="70" class="popup__slider popup__slider--temperature">
+                    <div class="popup__slider--after popup__slider--after--temperature">
+                        <h3 class="heading--popup-slider">
+                            +30
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="popup__buttons--container">
+                <div class="popup__buttons--content">
+                    <a href="#" class="btn">
+                        <h3 class="heading--button">
+                            Применить
+                        </h3>
+                    </a>
+                    <a href="#" class="btn">
+                        <h3 class="heading--button">
+                            Закрыть
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /popup temperature-->
+    <!-- popup floor -->
+    <div class="popup" id="popup-floor">
+        <div class="popup__container popup__container--floor">
+            <div class="popup__content">
+                <div class="popup__header">
+
+                    <div class="popup__header--left">
+                        <div class="popup__heading">
+                            <h2 class="heading-popup">
+                                Xiaomi Warm Floor
+                            </h2>
+                        </div>
+                        <div class="popup__header__status-text">
+                            <p class="paragraph-1">Включено</p>
+                        </div>
+                    </div>
+
+                    <div class="popup__header--right">
+                        <div class="popup__header__temperature">
+                            <h1 class="heading-temperature thermostat__value" data-value='23'>+23</h1>
+                        </div>
+                        <div class="popup__header__icon">
+                            <img srcset="assets/icon_temperature_2@1x.png 1x, assets/icon_temperature_2@2x.png 2x" src="assets/icon_temperature_2@2x"
+                                class="icon--popup" alt="icon temperature 2">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="popup__thermostat thermostat__container">
+                    <div class="popup__thermostat--center">
+                        <div class="popup__thermostat--center--switcher thermostat__switcher">
+                            <div class="popup__thermostat--center--triangle"></div>
+                        </div>
+                        <div class="popup__thermostat__temperature">
+                            <h1 class="heading--thermostat thermostat__text">+23</h1>
+                        </div>
+                    </div>
+                    <div class="popup__thermostat--bottom"></div>
+                    <div class="popup__thermostat--right-bottom"></div>
+                </div>
+
+            </div>
+            <div class="popup__buttons--container">
+                <div class="popup__buttons--content">
+                    <a href="#" class="btn">
+                        <h3 class="heading--button">
+                            Применить
+                        </h3>
+                    </a>
+                    <a href="#" class="btn">
+                        <h3 class="heading--button">
+                            Закрыть
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="popup popup__floor"></div> -->
+    <!-- /popup floor -->
+    <script src="swipers.js"></script>
+    <script src="thermostat.js"></script>
+</body>
+
+</html>

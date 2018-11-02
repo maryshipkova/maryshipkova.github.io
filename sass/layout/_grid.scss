@@ -1,9 +1,8 @@
 .grid{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
     display: grid;
     grid-template-rows: 5.75rem 1fr 4rem;
-    grid-template-columns: minmax($grid-gap, 1fr) 64rem minmax($grid-gap, 1fr) ;
+    grid-template-columns: minmax($grid-gap, 1fr) max-content minmax($grid-gap, 1fr) ;
     grid-template-areas:"header header header" 
                         ". content ."
                         "footer footer footer";
@@ -16,10 +15,91 @@
     .header{
         grid-area: header;
     }
+
     .content{
         grid-area: content; 
+
+        &__summary{
+            width: 100%;
+            display: grid;
+            grid-template-rows:  minmax(3.25rem,5.75rem) minmax(1rem,1.81rem) minmax(21.69rem,23.19rem) minmax(1rem,1.81rem)   10.31rem minmax(3rem,4rem);
+            grid-template-columns: minmax(1rem, $edge-margin)  minmax(39.375rem,1fr) minmax(1rem,1.63rem) minmax($card-width,1fr)  minmax(.5rem, $edge-margin);
+
+            .main{
+                grid-row: 3;
+                grid-column: 2;
+            }
+            
+            .scenarios{
+                grid-row: 3;
+                grid-column: 4;
+            }
+            .devices{
+                grid-row: 5;
+                grid-column: 2/-1;
+            }
+        }
     }
     .footer{
         grid-area: footer; 
     }
+
 }
+
+
+// .grid{
+//     height: 100%;
+//     width: 100%;
+//     display: grid;
+//     grid-template-rows:  minmax(3.25rem,5.75rem) minmax(1rem,1.81rem) minmax(21.69rem,23.19rem) minmax(1rem,1.81rem)   10.31rem minmax(3rem,4rem);
+//     grid-template-columns: minmax(1rem, $edge-margin)  minmax(39.375rem,1fr) minmax(1rem,1.63rem) minmax($card-width,1fr)  minmax(.5rem, $edge-margin);
+//     .header{
+//         grid-row: 1;
+//         grid-column: 1/-1;
+//     }
+//     .main{
+//         grid-row: 3;
+//         grid-column: 2;
+//     }
+    
+//     .scenarios{
+//         grid-row: 3;
+//         grid-column: 4;
+//     }
+//     .devices{
+//         grid-row: 5;
+//         grid-column: 2/-1;
+//     }
+//     .footer{
+//         grid-row: 6;
+//         grid-column: 2/-1;
+//     }
+
+
+//     @include responsive(phone) {
+//         grid-template-rows:  4rem 17.64rem 1.93rem 8.75rem 1.94rem 8.75rem;
+//         grid-template-columns: 1.25rem minmax(20.94rem,1fr) 1.25rem;
+    
+//         .header{
+//             grid-row: 1;
+//             grid-column: 1/-1;
+//         }
+//         .main{
+//             grid-row: 2;
+//             grid-column: 2;
+//         }
+        
+//         .scenarios{
+//             grid-row: 4;
+//             grid-column: 2/-1;
+//         }
+//         .devices{
+//             grid-row: 6;
+//             grid-column: 2/-1;
+//         }
+//         .footer{
+//            display: none;
+//         }
+//     }
+// }
+

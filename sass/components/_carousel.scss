@@ -1,0 +1,15 @@
+.carousel{
+    &__container{
+        transition: transform .3s;
+    }
+    &__wrap{
+        &--scenarios{
+            width: $card-width*3+2.82rem;
+            overflow: hidden;
+        }
+    }
+    &__next, &__prev{
+        visibility: hidden;
+    }
+
+}
