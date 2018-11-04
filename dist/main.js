@@ -1,20 +1,19 @@
-import {IEventModel} from "./IEventModel";
-import {IProperty} from "./IProperty";
-import {TemplateFactory} from "./TemplateFactory";
-
-const DATA: { events: IEventModel[] } = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var TemplateFactory_1 = require("./event-template/TemplateFactory");
+var DATA = {
     events: [{
-        type: "info",
-        title: "Еженедельный отчет по расходам ресурсов",
-        source: "Сенсоры потребления",
-        time: "19:00, Сегодня",
-        description: "Так держать! За последнюю неделю вы потратили на 10% меньше ресурсов, чем неделей ранее.",
-        icon: "stats",
-        data: {
-            image: "Richdata.png",
+            type: "info",
+            title: "Еженедельный отчет по расходам ресурсов",
+            source: "Сенсоры потребления",
+            time: "19:00, Сегодня",
+            description: "Так держать! За последнюю неделю вы потратили на 10% меньше ресурсов, чем неделей ранее.",
+            icon: "stats",
+            data: {
+                image: "Richdata.png",
+            },
+            size: "l",
         },
-        size: "l",
-    },
         {
             type: "info",
             title: "Дверь открыта",
@@ -126,8 +125,7 @@ const DATA: { events: IEventModel[] } = {
         },
     ],
 };
-
-const PROPERTIES: IProperty[] = [
+var PROPERTIES = [
     {
         name: "size",
         selector: ".card",
@@ -181,33 +179,6 @@ const PROPERTIES: IProperty[] = [
         children: [],
     },
 ];
-
-const cardTemplate: HTMLTemplateElement | null = document.querySelector("#card-template");
-
-const cardTemplateFactory = new TemplateFactory(cardTemplate, PROPERTIES);
-
-fetch("http://127.0.0.1:3000/api/events", {
-    method: "POST",
-    headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify({type: "info:critical"}),
-
-}).then((response) => {
-    // console.log(response.json());
-    return response.json();
-}).then((dataFromServer) => {
-    if (dataFromServer) {
-        console.log("getting data from server");
-        cardTemplateFactory.renderContent(dataFromServer.events);
-
-    } else {
-        console.log("getting data from local source, server is offline");
-        cardTemplateFactory.renderContent(DATA.events);
-    }
-
-}).catch((e) => {
-    console.log("getting data from local source, server is offline");
-    cardTemplateFactory.renderContent(DATA.events);
-});
+var cardTemplate = document.querySelector("#card-template");
+var cardTemplateFactory = new TemplateFactory_1.TemplateFactory(cardTemplate, PROPERTIES);
+cardTemplateFactory.renderContent(DATA.events);

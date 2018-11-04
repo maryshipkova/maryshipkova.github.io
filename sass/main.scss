@@ -8,7 +8,14 @@
 @import 'layout/grid',
         'layout/header',
         'layout/content',
-        'layout/footer';
+        'layout/footer',
+        'layout/section-devices',
+        'layout/section-main',
+        'layout/section-scenarios',
+        'layout/sstv';
 
 @import 'components/card',
-        'components/icons';
+        'components/icons',
+        'components/carousel',
+        'components/popup',
+        'components/buttons';

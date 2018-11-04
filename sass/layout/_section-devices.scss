@@ -1,0 +1,83 @@
+.devices {
+    & .section-heading {
+        margin-right: 0.81rem;
+        margin-bottom: 0;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.25rem;
+        position: relative;
+
+        @include responsive(phone) {
+            margin-bottom: 1.06rem;
+        }
+    }
+    &__filters {
+        display: flex;
+        z-index: 10;
+        @include responsive(phone) {
+            margin-left: auto;
+            flex-direction: column;
+            overflow-y: visible;
+        }
+
+        &__list{
+            display: flex;
+            @include responsive(phone) {
+                display: none;
+            }
+        }
+
+        &__checkbox {
+            display: none;
+        }
+        &__checkbox:checked ~  &__list{
+            @include responsive(phone) {
+
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 2rem;
+                right: 0rem;
+            }
+        }
+
+    }
+    &__filter {
+        @include properties;
+        @include responsive(phone) {
+            &:first-child>.heading-filter {
+                display: flex;
+            }
+        }
+    }
+
+
+    &__list {
+        display: flex;
+        @include responsive(phone) {
+            overflow-x: scroll;
+        }
+        &>* {
+            flex-shrink: 0;
+            margin-right: 0.94rem;
+            margin-bottom: 0.21rem;
+            @include responsive(phone) {
+                margin-right: 1.25rem;
+            }
+        }
+    }
+    &__icons {
+        margin-left: auto;
+        margin-right: $edge-margin;
+        @include responsive(phone) {
+            display: none;
+        }
+    }
+
+}
+
+.filter-active {
+    background-color: $filter-active-color;
+}

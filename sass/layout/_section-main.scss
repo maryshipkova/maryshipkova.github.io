@@ -1,0 +1,121 @@
+.main {
+    width: 100%;
+    height: 100%;
+    @include responsive(phone) {
+        .section-heading {
+            display: none;
+        }
+    }
+    &__content {
+        width: 100%;
+        border-radius: 1.25rem;
+        background: url(../../assets/bg@1x.png) no-repeat;
+        background-size: cover;
+        display: flex;
+        padding: 0 1.25rem 0 1.56rem;
+        @include responsive(phone) {
+            flex-direction: column;
+            padding: 1.25rem;
+            padding-right: 0;
+        }
+
+    }
+    &__status {
+        margin-top: 1.25rem;
+        max-width: 22.5rem;
+        @include responsive(phone) {
+            margin-top:0;
+        }
+        &--greeting {
+            margin-bottom: 0.38rem;
+        }
+        &--house {
+            margin-bottom: 1.56rem;
+            @include responsive(phone) {
+                margin-bottom: .94rem;
+            }
+        }
+        &--temperature {
+
+            display: grid;
+            grid-template-rows:1rem  2.69rem;
+            grid-template-columns: 3.88rem 6.5rem;
+            grid-gap:.25rem  1.13rem;
+
+            @include responsive(phone) {
+                grid-template-rows:.88rem  1.75rem;
+                grid-template-columns: 2.56rem 5.2rem;
+                grid-gap: .31rem 1.19rem;
+                align-items: start;
+            }   
+        }
+        @include responsive(phone) {
+            flex-direction: column;
+            margin-right: 1.25rem;
+        }
+
+    }
+    .temperature {
+        &--value:last-child{
+            @include responsive(phone) {
+            transform: translateY(-.37rem);
+            }
+        }
+    }
+
+    &__schedule {
+        height: 20.69rem;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        overflow-y: hidden;
+        position: relative;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        @supports (-webkit-appearance: none) { //webkit only
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style:none;
+        
+        }
+        @media (-moz-touch-enabled: 1), (pointer:coarse) {
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @include responsive(phone) {
+            height: 100%;
+            width: 100%;
+            margin-top: 1.25rem;
+            flex-direction: row;
+            overflow-x: scroll;
+        }
+
+        &>*{
+            &:first-child{
+                margin-top: 1.25rem;
+                @include responsive(phone) {
+                    margin-top: 0rem;
+                }
+            }
+            flex-shrink: 0;
+            margin-bottom: .94rem;
+            @include responsive(phone) {
+                margin-right: 1.25rem;
+                margin-bottom: 0rem;
+            }
+        }
+
+        &__slider {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -0.5rem;
+            cursor: pointer;
+            @include responsive(phone) {
+                display: none;
+            }
+        }
+    }
+}
