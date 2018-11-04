@@ -23,33 +23,30 @@
                             alt="Logo" class="icon--header-nav">
                     </label>
                     <input type="checkbox" class="header__nav__checkbox" id="header-toggle">
-                    <ul class="header__nav__list">
+                    <ul class="header__nav__list nav__list">
                         <li class="header__nav__item">
-                            <a href="#" class="text--nav-link link-active">События</a>
+                            <a href="#" class="text--nav-link link-active" id="page-events">События</a>
                         </li>
                         <li class="header__nav__item">
-                            <a href="#" class="text--nav-link">Сводка</a>
+                            <a href="#" class="text--nav-link" id="page-summary">Сводка</a>
                         </li>
                         <li class="header__nav__item">
-                            <a href="#" class="text--nav-link">Устройства</a>
-                        </li>
-                        <li class="header__nav__item">
-                            <a href="#" class="text--nav-link">Сценарии</a>
+                            <a href="#" class="text--nav-link" id="page-sstv">Видеонаблюдение</a>
                         </li>
                     </ul>
                 </nav>
             </header>
 
             <main class="content">
-                <div class="events-page">
-                <div class="content__header">
-                    <h1 class="heading--primary">
-                        Лента событий
-                    </h1>
-                </div>
-                <section class="events" id="events">
+                <div class="events-page" id = "events-page">
+                    <div class="content__header">
+                        <h1 class="heading--primary">
+                            Лента событий
+                        </h1>
+                    </div>
+                    <section class="events" id="events">
 
-                </section>
+                    </section>
                 </div>
             </main>
 
@@ -79,7 +76,7 @@
                 </ul>
             </footer>
         </div><!-- grid -->
-        
+
     <template id="card-template">
         <div class="card">
             <div class="card__hover-icon card__hover-icon--top">
@@ -198,7 +195,8 @@
     <script>
         var exports = {};
     </script>
-    <script src="dist/bundle.js"></script>
+    <script src="bundle.js"></script>
+
 </body>
 
 </html>
