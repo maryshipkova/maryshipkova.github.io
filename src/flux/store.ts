@@ -18,10 +18,9 @@ class Store {
 
     public pushAction(action: Action) {
         this.actionQueue.push(action);
-    //
+
         if (action.type === 'get-page')
             view.renderPage(action.id);
-        console.log(this.actionQueue);
     }
 
     public popAction(action: Action): void {

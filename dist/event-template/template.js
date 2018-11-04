@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var TemplateFactory_1 = require("./event-template/TemplateFactory");
+var TemplateFactory_1 = require("./TemplateFactory");
 var DATA = {
     events: [{
             type: "info",
@@ -181,4 +181,30 @@ var PROPERTIES = [
 ];
 var cardTemplate = document.querySelector("#card-template");
 var cardTemplateFactory = new TemplateFactory_1.TemplateFactory(cardTemplate, PROPERTIES);
+exports.cardTemplateFactory = cardTemplateFactory;
 cardTemplateFactory.renderContent(DATA.events);
+// fetch("http://127.0.0.1:3000/api/events", {
+//     method: "POST",
+//     headers: {
+//         "Accept": "application/json",
+//         "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({type: "info:critical"}),
+//
+// }).then((response) => {
+//     // console.log(response.json());
+//     return response.json();
+// }).then((dataFromServer) => {
+//     if (dataFromServer) {
+//         console.log("getting data from server");
+//         cardTemplateFactory.renderContent(dataFromServer.events);
+//
+//     } else {
+//         console.log("getting data from local source, server is offline");
+//         cardTemplateFactory.renderContent(DATA.events);
+//     }
+//
+// }).catch((e) => {
+//     console.log("getting data from local source, server is offline");
+//     cardTemplateFactory.renderContent(DATA.events);
+// });

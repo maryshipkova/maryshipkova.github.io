@@ -15,10 +15,8 @@ var Store = /** @class */ (function () {
     });
     Store.prototype.pushAction = function (action) {
         this.actionQueue.push(action);
-        //
         if (action.type === 'get-page')
             view_1.view.renderPage(action.id);
-        console.log(this.actionQueue);
     };
     Store.prototype.popAction = function (action) {
         this.actionQueue.shift();

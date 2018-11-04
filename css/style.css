@@ -277,6 +277,10 @@ body {
   width: 64rem;
   grid-area: page; }
 
+.sstv-page {
+  width: 64rem;
+  grid-area: page; }
+
 .summary-page {
   grid-area: page;
   width: 100%;
@@ -637,38 +641,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: relative; }
-  .card__f {
-    display: block;
-    width: 12.5rem;
-    background-color: #FAFAFA;
-    font-size: 0.88rem;
-    border-radius: 1.25rem;
-    padding: 1em 1.07em;
-    cursor: pointer;
-    transition: all .2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; }
-    .card__f--main, .card__f--devices {
-      min-height: 7.5rem; }
-    .card__f--scenarios {
-      min-height: 6.25rem; }
-    @media only screen and (max-width: 37.5em) {
-      .card__f {
-        width: 12.5rem; }
-        .card__f--main {
-          min-height: 7.5rem; }
-        .card__f--scenarios {
-          min-height: 6.25rem; }
-        .card__f--devices {
-          min-height: 5.88rem; } }
-    .card__f:hover {
-      background-color: #FFFFFF;
-      box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5); }
-    .card__f__icon {
-      margin: 0 0 auto -.07em; }
-    .card__f__text {
-      margin-top: 0.32em; }
   .card__type--top {
     display: grid;
     grid-template-columns: 1fr;
@@ -731,6 +703,38 @@ body {
   .card__l .card__description {
     margin-right: 1.5rem;
     color: #333333; }
+  .card__f {
+    display: block;
+    width: 12.5rem;
+    background-color: #FAFAFA;
+    font-size: 0.88rem;
+    border-radius: 1.25rem;
+    padding: 1em 1.07em;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; }
+    .card__f--main, .card__f--devices {
+      min-height: 7.5rem; }
+    .card__f--scenarios {
+      min-height: 6.25rem; }
+    @media only screen and (max-width: 37.5em) {
+      .card__f {
+        width: 12.5rem; }
+        .card__f--main {
+          min-height: 7.5rem; }
+        .card__f--scenarios {
+          min-height: 6.25rem; }
+        .card__f--devices {
+          min-height: 5.88rem; } }
+    .card__f:hover {
+      background-color: #FFFFFF;
+      box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5); }
+    .card__f__icon {
+      margin: 0 0 auto -.07em; }
+    .card__f__text {
+      margin-top: 0.32em; }
   .card__critical {
     background-color: #DB5341;
     color: white; }
