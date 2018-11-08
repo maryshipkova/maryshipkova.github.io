@@ -454,10 +454,21 @@ var Store = /** @class */ (function () {
         this.view = view;
         this.localStorage = localStorage;
     }
+    Store.prototype.getState = function () {
+        var id = this.localStorage.getItem('action-id'), type = this.localStorage.getItem('action-type');
+        return {
+            id: id ? id : '',
+            type: type ? type : ''
+        };
+    };
     Store.prototype.setState = function (action) {
-        if (action.type === "get-page") { // others are possible
-            this.view.renderPage(action.id);
-        }
+        var _a = this.getState(), id = _a.id, type = _a.type;
+        if (action.id !== id || action.type !== type)
+            if (action.type === "get-page") { // others are possible
+                this.view.renderPage(action.id);
+                localStorage.setItem('action-id', action.id);
+                localStorage.setItem('action-type', action.type);
+            }
     };
     return Store;
 }());

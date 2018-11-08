@@ -13,11 +13,26 @@ export class Store {
 
     }
 
-    public setState(action: Action) {
+    public getState(): Action {
+        const id = this.localStorage.getItem('action-id'),
+            type = this.localStorage.getItem('action-type');
 
-        if (action.type === "get-page") { // others are possible
-            this.view.renderPage(action.id);
-        }
+        return {
+            id: id ? id : '',
+            type: type ? type : ''
+        };
     }
+
+    public setState(action: Action): void {
+
+        const {id, type} = this.getState();
+        if (action.id !== id || action.type !== type)
+            if (action.type === "get-page") { // others are possible
+                this.view.renderPage(action.id);
+                localStorage.setItem('action-id', action.id);
+                localStorage.setItem('action-type', action.type);
+            }
+    }
+
 
 }
