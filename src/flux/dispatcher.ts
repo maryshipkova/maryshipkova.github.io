@@ -1,26 +1,26 @@
+import {IObserver} from "./Observer";
 import {Store} from "./store";
 
+export class Dispatcher implements IObserver {
+    private store: Store;
 
-export class Dispatcher {
-    private store:Store;
-
-    constructor(store:Store) {
-
+    constructor(store: Store) {
+        this.store = store;
     }
-
 
     public registerEvent(event: Event): void {
-        let element = event.srcElement;
-        if(element)
-            store.pushAction({
-                type: 'get-page',
-                id: element.getAttribute('id')!
+        const element = event.srcElement;
+        if (element) {
+            this.store.pushAction({
+                type: "get-page",
+                id: element.getAttribute("id")!,
             });
+        }
     }
 
-    public setEventHandlers(items:Element[]){
-        items.forEach((element) =>
-            element.addEventListener('click', this.registerEvent));
+    public handleEvent(elements: Element[]) {
+        elements.forEach((element) =>
+            element.addEventListener("click", this.registerEvent));
 
     }
 }

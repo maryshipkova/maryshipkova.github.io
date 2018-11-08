@@ -2,7 +2,6 @@ import {Action} from "./Action";
 import {View} from "./view";
 
 
-//singleton
 export class Store {
 
     private actionQueue: Action[];
@@ -17,8 +16,9 @@ export class Store {
     public pushAction(action: Action) {
         this.actionQueue.push(action);
 
-        if (action.type === 'get-page')
+        if (action.type === "get-page") {
             this.view.renderPage(action.id);
+        }
     }
 
     public popAction(action: Action): void {
@@ -26,9 +26,10 @@ export class Store {
     }
 
     public popActionById(id: string): void {
-        let actionToPop = this.actionQueue.find(action => action.id === id);
-        if (actionToPop)
+        const actionToPop = this.actionQueue.find((action) => action.id === id);
+        if (actionToPop) {
             this.popAction(actionToPop);
+        }
     }
 
 }

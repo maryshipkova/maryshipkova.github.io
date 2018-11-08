@@ -8,10 +8,10 @@
     "watch:tsc": "tsc -w",
     "watchify": "watchify dist/*/*  -o ./bundle.js",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver watch:sass watch:tsc watchify" ,
+    "start": "npm-run-all --parallel devserver watch:sass watch:tsc watchify",
     "lint": "tslint src/**/*.ts --fix",
     "tsc": "tsc --build tsconfig.json",
-    "bundle": "browserify dist/*/*  -o ./bundle.js"
+    "bundle": "browserify ./dist/*/*  -o ./bundle.js"
   },
   "author": "Maria Shipkova",
   "license": "ISC",

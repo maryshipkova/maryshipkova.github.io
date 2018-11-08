@@ -184,11 +184,10 @@ const PROPERTIES: IProperty[] = [
 
 const cardTemplate: HTMLTemplateElement | null = document.querySelector("#card-template");
 
-
 const cardTemplateFactory = new TemplateFactory(cardTemplate, PROPERTIES);
 cardTemplateFactory.renderContent(DATA.events);
 
-export{cardTemplateFactory};
+export {cardTemplateFactory};
 // fetch("http://127.0.0.1:3000/api/events", {
 //     method: "POST",
 //     headers: {

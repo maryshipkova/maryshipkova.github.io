@@ -2,9 +2,9 @@ import {Dispatcher} from "./dispatcher";
 import {Store} from "./store";
 
 import {Component} from "./Component";
-import {View} from "./view";
+import {NavigationView} from "./NavigationView";
 
-let components: Component[] = [
+const components: Component[] = [
     {
         name: "События",
         id: "page-events",
@@ -16,7 +16,7 @@ let components: Component[] = [
                     </div>
                     <section class="events" id="events">
 
-                    
+
         <div class="card card__l">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -49,7 +49,7 @@ let components: Component[] = [
 
                 <div class="card__description"><p class="card--paragraph">Так держать! За последнюю неделю вы потратили на 10% меньше ресурсов, чем неделей ранее.</p></div>
                 <div class="card__data">
-                    
+
 
                     <div class="card__data__image-box">
                         <div class="card__data__image">  <img class="card__data__image--img" src="assets/Richdata.png" alt="Richdata.png" touch-action="none"></div>
@@ -64,18 +64,18 @@ let components: Component[] = [
                         </div>
                     </div>
 
-                    
 
 
-                    
 
-                    
+
+
+
 
                 </div>
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__s">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -106,12 +106,12 @@ let components: Component[] = [
             </div>
             <div class="card__type--bottom card__info">
 
-                
-                
+
+
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__s">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -142,12 +142,12 @@ let components: Component[] = [
             </div>
             <div class="card__type--bottom card__info">
 
-                
-                
+
+
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__s">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -178,12 +178,12 @@ let components: Component[] = [
             </div>
             <div class="card__type--bottom card__info">
 
-                
-                
+
+
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__m">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -216,9 +216,9 @@ let components: Component[] = [
 
                 <div class="card__description"><p class="card--paragraph">Установлен климатический режим «Фиджи»</p></div>
                 <div class="card__data">
-                    
 
-                    
+
+
 
                     <div class="card__data__climate">
                     <div class="card__data__temperature">
@@ -233,15 +233,15 @@ let components: Component[] = [
                     </div></div>
 
 
-                    
 
-                    
+
+
 
                 </div>
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__m">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -273,11 +273,11 @@ let components: Component[] = [
             <div class="card__type--bottom card__info">
 
                 <div class="card__description"><p class="card--paragraph">В комнате открыто окно, закройте его и повторите попытку</p></div>
-                
+
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__m">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -310,14 +310,14 @@ let components: Component[] = [
 
                 <div class="card__description"><p class="card--paragraph">Сейчас проигрывается:</p></div>
                 <div class="card__data">
-                    
-
-                    
-
-                    
 
 
-                    
+
+
+
+
+
+
 
                     <div class="card__data__music">  <div class="music__header">
                     <div class="card__data__albumcover">
@@ -367,7 +367,7 @@ let components: Component[] = [
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__m">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -400,11 +400,11 @@ let components: Component[] = [
 
                 <div class="card__description"><p class="card--paragraph">Кажется, в холодильнике заканчивается молоко. Вы хотите добавить его в список покупок?</p></div>
                 <div class="card__data">
-                    
 
-                    
 
-                    
+
+
+
 
 
                     <div class="card__data__buttons">
@@ -418,13 +418,13 @@ let components: Component[] = [
                                             </span>
                                         </button></div>
 
-                    
+
 
                 </div>
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__s">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -456,11 +456,11 @@ let components: Component[] = [
             <div class="card__type--bottom card__info">
 
                 <div class="card__description"><p class="card--paragraph">Ура! Устройство «Оконный сенсор» снова в строю!</p></div>
-                
+
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__l">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -493,7 +493,7 @@ let components: Component[] = [
 
                 <div class="card__description"><p class="card--paragraph">Робопылесос не смог сменить свое местоположение в течение последних 3 минут. Похоже, ему нужна помощь.</p></div>
                 <div class="card__data">
-                    
+
 
                     <div class="card__data__image-box">
                         <div class="card__data__image">  <img class="card__data__image--img" src="assets/cleaner.jpg" alt="cleaner.jpg" touch-action="none"></div>
@@ -508,18 +508,18 @@ let components: Component[] = [
                         </div>
                     </div>
 
-                    
 
 
-                    
 
-                    
+
+
+
 
                 </div>
             </div> <!-- bottom -->
 
         </div>
-    
+
         <div class="card card__s">
             <div class="card__hover-icon card__hover-icon--top">
                 <svg class="icon--card__hover">
@@ -550,13 +550,13 @@ let components: Component[] = [
             </div>
             <div class="card__type--bottom card__info">
 
-                
-                
+
+
             </div> <!-- bottom -->
 
         </div>
     </section>
-                </div>`
+                </div>`,
     },
     {
         name: "Сводка",
@@ -575,14 +575,14 @@ let components: Component[] = [
                                             <p class="paragraph-1">Двери и окна закрыты, сигнализация включена.</p>
                                         </div>
                                         <div class="main__status--temperature">
-                
+
                                             <div class="temperature--heading">
                                                 <h4 class="heading--place">Дома</h4>
                                             </div>
                                             <div class="temperature--heading">
                                                 <h4 class="heading--place">За окном</h4>
                                             </div>
-                
+
                                             <div class="temperature--value">
                                                 <h1 class="heading-temperature">+23</h1>
                                             </div>
@@ -593,7 +593,7 @@ let components: Component[] = [
                                                     </svg>
                                                 </h1>
                                             </div>
-                
+
                                         </div>
                                     </div>
                                     <div class="main__schedule" onscroll="changeMainSliderVisibility(event)">
@@ -726,7 +726,7 @@ let components: Component[] = [
                                 <!-- scenarios__content -->
                             </section>
                             <!-- /scenarios -->
-                
+
                             <!-- devices -->
                             <section class="devices">
                                 <div class="devices__header">
@@ -874,7 +874,7 @@ let components: Component[] = [
                                 </div>
                             </section>
                             <!-- /devices -->
-                    </div>`
+                    </div>`,
     },
     {
         name: "Видеонаблюдение",
@@ -904,17 +904,18 @@ let components: Component[] = [
                                     <video id="video-4" class="sstv__video" muted autoplay></video>
                                     <a href="#popup-sstv" class="sstv__btn-expand">+</a>
                                 </div>
-            
+
                             </div>
-            
+
                         </section>
-                </div>`
-    }
+                </div>`,
+    },
 
 ];
 
-const view = new View(components);
+
+const view = new NavigationView(components, document.querySelector<HTMLUListElement>(".nav__list")!, null);
 const store = new Store(view);
 const dispatcher = new Dispatcher(store);
-
-//init state
+// view.observer = dispatcher;
+// init state
