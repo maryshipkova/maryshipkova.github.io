@@ -1,9 +1,11 @@
-import {store} from "./store";
-import {view} from "./view";
+import {Store} from "./store";
 
-class Dispatcher {
 
-    constructor() {
+export class Dispatcher {
+    private store:Store;
+
+    constructor(store:Store) {
+
     }
 
 
@@ -22,6 +24,3 @@ class Dispatcher {
 
     }
 }
-const dispatcher = new Dispatcher();
-dispatcher.setEventHandlers(Array.from(view.navContainer.children));
-export {dispatcher};

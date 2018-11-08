@@ -1,14 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var store_1 = require("./store");
-var view_1 = require("./view");
 var Dispatcher = /** @class */ (function () {
-    function Dispatcher() {
+    function Dispatcher(store) {
     }
     Dispatcher.prototype.registerEvent = function (event) {
         var element = event.srcElement;
         if (element)
-            store_1.store.pushAction({
+            store.pushAction({
                 type: 'get-page',
                 id: element.getAttribute('id')
             });
@@ -21,6 +19,4 @@ var Dispatcher = /** @class */ (function () {
     };
     return Dispatcher;
 }());
-var dispatcher = new Dispatcher();
-exports.dispatcher = dispatcher;
-dispatcher.setEventHandlers(Array.from(view_1.view.navContainer.children));
+exports.Dispatcher = Dispatcher;

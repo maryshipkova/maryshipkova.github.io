@@ -1,22 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var view_1 = require("./view");
 //singleton
 var Store = /** @class */ (function () {
-    function Store() {
+    function Store(view) {
         this.actionQueue = [];
+        this.view = view;
     }
-    Object.defineProperty(Store, "Instance", {
-        get: function () {
-            return this._instance || (this._instance = new this());
-        },
-        enumerable: true,
-        configurable: true
-    });
     Store.prototype.pushAction = function (action) {
         this.actionQueue.push(action);
         if (action.type === 'get-page')
-            view_1.view.renderPage(action.id);
+            this.view.renderPage(action.id);
     };
     Store.prototype.popAction = function (action) {
         this.actionQueue.shift();
@@ -28,5 +21,4 @@ var Store = /** @class */ (function () {
     };
     return Store;
 }());
-var store = Store.Instance;
-exports.store = store;
+exports.Store = Store;

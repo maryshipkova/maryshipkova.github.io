@@ -1,26 +1,24 @@
 import {Action} from "./Action";
-import {view} from "./view";
+import {View} from "./view";
+
 
 //singleton
-class Store {
-    private static _instance: Store;
+export class Store {
+
     private actionQueue: Action[];
+    private view: View;
 
-    private constructor() {
+    public constructor(view: View) {
         this.actionQueue = [];
+        this.view = view;
 
-    }
-
-    public static get Instance() {
-
-        return this._instance || (this._instance = new this());
     }
 
     public pushAction(action: Action) {
         this.actionQueue.push(action);
 
         if (action.type === 'get-page')
-            view.renderPage(action.id);
+            this.view.renderPage(action.id);
     }
 
     public popAction(action: Action): void {
@@ -34,6 +32,3 @@ class Store {
     }
 
 }
-const store = Store.Instance;
-
-export {store};
