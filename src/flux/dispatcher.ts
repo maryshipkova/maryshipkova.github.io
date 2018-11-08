@@ -8,19 +8,13 @@ export class Dispatcher implements IObserver {
         this.store = store;
     }
 
-    public registerEvent(event: Event): void {
+    public handleEvent(event: Event): void {
         const element = event.srcElement;
         if (element) {
-            this.store.pushAction({
+            this.store.setState({
                 type: "get-page",
                 id: element.getAttribute("id")!,
             });
         }
-    }
-
-    public handleEvent(elements: Element[]) {
-        elements.forEach((element) =>
-            element.addEventListener("click", this.registerEvent));
-
     }
 }

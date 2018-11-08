@@ -4,31 +4,19 @@ import {View} from "./view";
 
 export class Store {
 
-    private actionQueue: Action[];
     private view: View;
+    private localStorage: Storage;
 
     public constructor(view: View) {
-        this.actionQueue = [];
         this.view = view;
+        this.localStorage = localStorage;
 
     }
 
-    public pushAction(action: Action) {
-        this.actionQueue.push(action);
+    public setState(action: Action) {
 
-        if (action.type === "get-page") {
+        if (action.type === "get-page") { // others are possible
             this.view.renderPage(action.id);
-        }
-    }
-
-    public popAction(action: Action): void {
-        this.actionQueue.shift();
-    }
-
-    public popActionById(id: string): void {
-        const actionToPop = this.actionQueue.find((action) => action.id === id);
-        if (actionToPop) {
-            this.popAction(actionToPop);
         }
     }
 

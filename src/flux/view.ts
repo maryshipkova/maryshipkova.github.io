@@ -11,7 +11,6 @@ export class View {
         this.container = document.querySelector(".content");
         this.components = componentsData;
 
-
     }
 
 

@@ -1,7 +1,7 @@
 export interface IObserver {
-    handleEvent(elements: Element[]): void;
+    handleEvent(event: Event): void;
 }
 
 export interface IObservable {
-    notify(elements: Element[]): void;
+    notify(event: Event): void;
 }
