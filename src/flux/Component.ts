@@ -3,5 +3,4 @@ export interface Component {
     id: string;
     innerHtml: string;
 
-
 }

@@ -913,12 +913,10 @@ const components: Component[] = [
 
 ];
 
-
 const view = new NavigationView(components, document.querySelector<HTMLUListElement>(".nav__list")!);
 const store = new Store(view);
 const dispatcher = new Dispatcher(store);
 
 view.init(dispatcher);
-
 
 // init state

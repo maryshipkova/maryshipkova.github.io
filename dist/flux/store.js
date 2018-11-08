@@ -16,7 +16,7 @@ var Store = /** @class */ (function () {
         var _a = this.getState(), id = _a.id, type = _a.type;
         if (action.id !== id || action.type !== type)
             if (action.type === "get-page") { // others are possible
-                this.view.renderPage(action.id);
+                this.view.renderComponent(action.id);
                 localStorage.setItem('action-id', action.id);
                 localStorage.setItem('action-type', action.type);
             }

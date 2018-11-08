@@ -24,7 +24,7 @@ var NavigationView = /** @class */ (function (_super) {
     NavigationView.prototype.init = function (observer) {
         this.observer = observer;
         this.renderNav();
-        this.renderPage(this.components[0].id);
+        this.renderComponent(this.components[0].id);
     };
     NavigationView.prototype.notify = function (event) {
         if (this.observer)

@@ -5,7 +5,7 @@ var View = /** @class */ (function () {
         this.container = document.querySelector(".content");
         this.components = componentsData;
     }
-    View.prototype.renderPage = function (id) {
+    View.prototype.renderComponent = function (id) {
         var component = this.components.find(function (component) { return component.id === id; });
         if (this.container && component) {
             this.container.innerHTML = component.innerHtml;

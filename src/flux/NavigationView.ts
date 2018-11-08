@@ -12,18 +12,19 @@ export class NavigationView extends View implements IObservable {
         this.navContainer = navContainer;
     }
 
-    public init(observer?:IObserver){
+    public init(observer?: IObserver) {
         this.observer = observer;
         this.renderNav();
-        this.renderPage(this.components[0].id);
+        this.renderComponent(this.components[0].id);
     }
 
     public notify(event: Event): void {
-        if (this.observer)
+        if (this.observer) {
             this.observer.handleEvent(event);
+        }
     }
 
-    public renderNav() {
+    private renderNav() {
         let items: string = "";
         this.components.forEach((component) => {
             items += `<li class="header__nav__item">
@@ -33,9 +34,8 @@ export class NavigationView extends View implements IObservable {
 
         this.navContainer.innerHTML = items;
         Array.from(this.navContainer.children).forEach((element) => {
-            element.addEventListener("click", (event: Event) => this.notify(event))
+            element.addEventListener("click", (event: Event) => this.notify(event));
         });
-
 
     }
 

@@ -183,7 +183,7 @@ const PROPERTIES: IProperty[] = [
 ];
 
 const cardTemplate: HTMLTemplateElement | null = document.querySelector("#card-template");
-if(cardTemplate) {
+if (cardTemplate) {
     const cardTemplateFactory = new TemplateFactory(cardTemplate, PROPERTIES);
     cardTemplateFactory.renderContent(DATA.events);
 }

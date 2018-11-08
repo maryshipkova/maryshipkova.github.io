@@ -374,7 +374,7 @@ var NavigationView = /** @class */ (function (_super) {
     NavigationView.prototype.init = function (observer) {
         this.observer = observer;
         this.renderNav();
-        this.renderPage(this.components[0].id);
+        this.renderComponent(this.components[0].id);
     };
     NavigationView.prototype.notify = function (event) {
         if (this.observer)
@@ -465,7 +465,7 @@ var Store = /** @class */ (function () {
         var _a = this.getState(), id = _a.id, type = _a.type;
         if (action.id !== id || action.type !== type)
             if (action.type === "get-page") { // others are possible
-                this.view.renderPage(action.id);
+                this.view.renderComponent(action.id);
                 localStorage.setItem('action-id', action.id);
                 localStorage.setItem('action-type', action.type);
             }
@@ -482,7 +482,7 @@ var View = /** @class */ (function () {
         this.container = document.querySelector(".content");
         this.components = componentsData;
     }
-    View.prototype.renderPage = function (id) {
+    View.prototype.renderComponent = function (id) {
         var component = this.components.find(function (component) { return component.id === id; });
         if (this.container && component) {
             this.container.innerHTML = component.innerHtml;
