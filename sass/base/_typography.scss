@@ -45,8 +45,8 @@
         }
     }
 
-    &_source-text,
-    &_time-text {
+    &_sourceText,
+    &_timeText {
         font-size: 18px;
         font-weight: normal;
 
@@ -55,7 +55,7 @@
         }
     }
 
-    &_image-settings {
+    &_imageSettings {
         font-size: 12px;
     }
 
@@ -80,43 +80,44 @@
     }
 
 
-    &_data {
-
-        &-climate {
-            font-size: 18px;
-            color: black;
-
-            @include responsive(phone) {
-                font-size: 14px;
-            }
-        }
 
 
-        &-paragraph {
-            font-size: 20px;
-            color: black;
-        }
 
-        &-music-title {
-            font-size: 20px;
-            color: black;
+}
 
-            @include responsive(phone) {
-                font-size: 18px;
-            }
-        }
+.CardData {
 
-        &-music {
+    &_climate {
+        font-size: 18px;
+        color: black;
+
+        @include responsive(phone) {
             font-size: 14px;
-            color: rgba($color-music-text, .84);
-
-            @include responsive(phone) {
-                font-size: 14px;
-            }
         }
-
     }
 
 
+    &_paragraph {
+        font-size: 20px;
+        color: black;
+    }
+
+    &_musicTitle {
+        font-size: 20px;
+        color: black;
+
+        @include responsive(phone) {
+            font-size: 18px;
+        }
+    }
+
+    &_music {
+        font-size: 14px;
+        color: rgba($color-music-text, .84);
+
+        @include responsive(phone) {
+            font-size: 14px;
+        }
+    }
 
 }

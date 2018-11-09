@@ -32,22 +32,22 @@ export class TemplateFactory {
 
     public renderEventData(event: IEventModel, dataNode: HTMLElement): void {
 
-        const graph: HTMLDivElement | null = dataNode.querySelector(".card__data__graph");
-        const image: HTMLDivElement | null = dataNode.querySelector(".card__data__image");
-        const music: HTMLDivElement | null = dataNode.querySelector(".card__data__music");
-        const climate: HTMLDivElement | null = dataNode.querySelector(".card__data__climate");
-        const buttons: HTMLDivElement | null = dataNode.querySelector(".card__data__buttons");
+        const graph: HTMLDivElement | null = dataNode.querySelector(".Card-data-graph");
+        const image: HTMLDivElement | null = dataNode.querySelector(".Card-data-image");
+        const music: HTMLDivElement | null = dataNode.querySelector(".Card-data-music");
+        const climate: HTMLDivElement | null = dataNode.querySelector(".Card-data-climate");
+        const buttons: HTMLDivElement | null = dataNode.querySelector(".Card-data-buttons");
 
         if (event.data) {
             if (event.data.type === "graph" && graph) {
-                graph.innerHTML = `  <img class="card__data__image--img" src="${"assets/RichData@2x-min.png"}" alt="${"RichData@2x-min.png"}" touch-action="none">`;
+                graph.innerHTML = `  <img class="Card-data-image_img" src="${"assets/RichData@2x-min.png"}" alt="${"RichData@2x-min.png"}" touch-action="none">`;
 
             } else {
                 this._removeItem(graph);
             }
 
             if (event.data.image && image) {
-                image.innerHTML = `  <img class="card__data__image--img" src="assets/${event.data.image}" alt="${event.data.image}" touch-action="none">`;
+                image.innerHTML = `  <img class="Card-data-image_img" src="assets/${event.data.image}" alt="${event.data.image}" touch-action="none">`;
             } else {
                 if (image) {
                     this._removeItem(image.parentElement);
@@ -56,14 +56,14 @@ export class TemplateFactory {
 
             if (event.data.temperature && climate) {
                 climate.innerHTML = `
-                    <div class="card__data__temperature">
-                        <p class="card--data-climate">
-                        Температура: <span class="card--data-climate text--bold">${event.data.temperature} С</span>
+                    <div class="Card-data-temperature">
+                        <p class="Card_data-climate">
+                        Температура: <span class="Card_data-climate text_bold">${event.data.temperature} С</span>
                         </p>
                     </div>
-                    <div class="card__data__humidity">
-                        <p class="card--data-climate">
-                            Влажность: <span class="card--data-climate text--bold">${event.data.humidity}%</span>
+                    <div class="Card-data-humidity">
+                        <p class="Card_data-climate">
+                            Влажность: <span class="Card_data-climate text_bold">${event.data.humidity}%</span>
                         </p>
                     </div>`;
             } else {
@@ -72,21 +72,21 @@ export class TemplateFactory {
 
             if (event.data.track && music) {
                 music.innerHTML =
-                    `  <div class="music__header">
-                    <div class="card__data__albumcover">
-                        <img class="card__data__albumcover--img" src="${event.data.albumcover}" alt="${event.data.albumcover}">
+                    `  <div class="music-header">
+                    <div class="Card-data-albumcover">
+                        <img class="Card-data-albumcover_img" src="${event.data.albumcover}" alt="${event.data.albumcover}">
                     </div>
 
-                    <div class="music__main">
-                        <div class="card__data__artist">
-                            <p class="card--data-music-title">
+                    <div class="music-main">
+                        <div class="Card-data-artist">
+                            <p class="Card_data-music-title">
                                 ${event.data.artist} - ${event.data.track.name}
                             </p>
                         </div>
-                        <div class="music__track">
-                            <input type="range" class="music__track--range">
-                            <div class="card__data__track--length music__track--length">
-                                <p class="card--data-music">
+                        <div class="music-track">
+                            <input type="range" class="music-track_range">
+                            <div class="Card-data-track_length music-track_length">
+                                <p class="Card_data-music">
                                     ${event.data.track.length}
                                 </p>
                             </div>
@@ -94,23 +94,23 @@ export class TemplateFactory {
 
                     </div>
                 </div>
-                <div class="music__player">
-                    <div class="music__icons">
-                        <div class="music__icons--item">
-                            <svg class="icon--music">
+                <div class="music-player">
+                    <div class="music-icons">
+                        <div class="music-icons_item">
+                            <svg class="icon_music">
                                 <use xlink:href="assets/Prev.svg#Events"></use>
                             </svg>
                         </div>
-                        <div class="music__icons--item">
-                            <svg class="icon--music icon--rotated">
+                        <div class="music-icons_item">
+                            <svg class="icon_music icon_rotated">
                                 <use xlink:href="assets/Prev.svg#Events"></use>
                             </svg>
                         </div>
                     </div>
 
-                    <input type="range" class="music__player--range">
-                    <div class="card__data__volume">
-                        <p class="card--data-music">
+                    <input type="range" class="music-player_range">
+                    <div class="Card-data-volume">
+                        <p class="Card_data-music">
                             ${event.data.volume}
                         </p>
                     </div>
@@ -121,8 +121,8 @@ export class TemplateFactory {
 
             if (event.data.buttons && buttons) {
                 event.data.buttons.forEach((btn) => {
-                    buttons.innerHTML += ` <button class="card__data__buttons--btn">
-                                            <span class="card--data-paragraph text--bold">
+                    buttons.innerHTML += ` <button class="Card-data-buttons_btn">
+                                            <span class="Card_data-paragraph text_bold">
                                                 ${btn}
                                             </span>
                                         </button>`;

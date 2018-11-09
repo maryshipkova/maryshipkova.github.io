@@ -104,14 +104,14 @@ body {
     .Card_heading {
       font-size: 14px; } }
 
-.Card_source-text, .Card_time-text {
+.Card_sourceText, .Card_timeText {
   font-size: 18px;
   font-weight: normal; }
   @media only screen and (max-width: 37.5em) {
-    .Card_source-text, .Card_time-text {
+    .Card_sourceText, .Card_timeText {
       font-size: 12px; } }
 
-.Card_image-settings {
+.Card_imageSettings {
   font-size: 12px; }
 
 .Card_paragraph {
@@ -128,29 +128,29 @@ body {
     .Card_l .Card_paragraph {
       font-size: 18px; } }
 
-.Card_data-climate {
+.CardData_climate {
   font-size: 18px;
   color: black; }
   @media only screen and (max-width: 37.5em) {
-    .Card_data-climate {
+    .CardData_climate {
       font-size: 14px; } }
 
-.Card_data-paragraph {
+.CardData_paragraph {
   font-size: 20px;
   color: black; }
 
-.Card_data-music-title {
+.CardData_musicTitle {
   font-size: 20px;
   color: black; }
   @media only screen and (max-width: 37.5em) {
-    .Card_data-music-title {
+    .CardData_musicTitle {
       font-size: 18px; } }
 
-.Card_data-music {
+.CardData_music {
   font-size: 14px;
   color: rgba(161, 161, 161, 0.84); }
   @media only screen and (max-width: 37.5em) {
-    .Card_data-music {
+    .CardData_music {
       font-size: 14px; } }
 
 .Grid {
@@ -324,25 +324,25 @@ body {
     display: grid;
     grid-template-areas: "description description" "data data";
     position: relative; }
-  .Card-s .Card-type_top,
-  .Card-s .Card-type_bottom {
+  .Card-s .Card-Type_top,
+  .Card-s .Card-Type_bottom {
     grid-row-gap: 1.25rem; }
-  .Card-s .Card-type_top {
+  .Card-s .Card-Type_top {
     padding: 0.86rem 1.25rem 1.25rem 1.31rem;
     grid-template-areas: "header header" "source source" "time time"; }
     @media only screen and (max-width: 37.5em) {
-      .Card-s .Card-type_top {
+      .Card-s .Card-Type_top {
         grid-template-areas: "header header" "source time"; } }
     @media only screen and (max-width: 37.5em) {
-      .Card-s .Card-type_top {
+      .Card-s .Card-Type_top {
         padding: 1rem; } }
-  .Card-s .Card-type_bottom {
+  .Card-s .Card-Type_bottom {
     padding: 0 1.25rem 0 1.31rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-s .Card-type_bottom {
+      .Card-s .Card-Type_bottom {
         padding: 0 1rem 0 1rem; } }
-  .Card-m .Card-type_top,
-  .Card-m .Card-type_bottom {
+  .Card-m .Card-Type_top,
+  .Card-m .Card-Type_bottom {
     grid-row-gap: 1.33rem; }
   .Card-m .Card-type_top {
     grid-template-areas: "header header" "source time";
@@ -350,40 +350,40 @@ body {
     @media only screen and (max-width: 37.5em) {
       .Card-m .Card-type_top {
         padding: 1rem 1rem 1rem 1rem; } }
-  .Card-m .Card-type_bottom {
+  .Card-m .Card-Type_bottom {
     padding: 1.25rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-m .Card-type_bottom {
+      .Card-m .Card-Type_bottom {
         padding: 1rem; } }
-  .Card-m .Card_time-text {
+  .Card-m .Card_timeText {
     text-align: right; }
   .Card-l .Card-type_top,
   .Card-l .Card-type_bottom {
     grid-row-gap: 1.5rem; }
-  .Card-l .Card-type_top {
+  .Card-l .Card-Type_top {
     grid-template-areas: " header header" "source time";
     padding: 1.25rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-l .Card-type_top {
+      .Card-l .Card-Type_top {
         padding: 1rem 1rem 1rem 1rem; } }
-  .Card-l .Card-type_bottom {
+  .Card-l .Card-Type_bottom {
     padding: 0 1.25rem 1.25rem 1.25rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-l .Card-type_bottom {
+      .Card-l .Card-Type_bottom {
         padding: 0 1rem 1rem 1rem; } }
-  .Card-l .Card_time-text {
+  .Card-l .Card_timeText {
     text-align: right; }
   .Card-l .Card-Description {
     margin-right: 1.5rem;
     color: #333333; }
-  .Card-critical {
+  .Card_critical {
     background-color: #DB5341;
     color: white; }
-    .Card-critical::after {
+    .Card_critical::after {
       content: "";
       display: block;
       height: .0005rem; }
-    .Card-critical ~ .Card-type_bottom::before {
+    .Card_critical ~ .Card-type_bottom::before {
       content: "";
       display: block;
       height: 1.25rem;
@@ -393,81 +393,29 @@ body {
       border-top-right-radius: 1.25rem;
       position: absolute;
       top: -1rem; }
-  .Card-info {
+  .Card-Info {
     background-color: #FAFAFA;
     color: #333333; }
-  .Card-header {
+  .Card-Header {
     grid-area: header;
     width: 100%;
     display: flex;
     align-items: center; }
-    .Card-header .Card-Icon {
+    .Card-Header .Card-Icon {
       margin-right: 1.21rem; }
-  .Card-title {
+  .Card-Title {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical; }
-  .Card-source {
+  .Card-Source {
     grid-area: source;
     align-self: end; }
-  .Card-time {
+  .Card-Time {
     grid-area: time;
     align-self: end; }
-  .Card-description {
+  .Card-Description {
     grid-area: description;
     z-index: 2; }
-  .Card-data {
-    grid-area: data;
-    align-self: end;
-    z-index: 2; }
-    .Card-data-image {
-      overflow: hidden; }
-      .Card-data-image_img {
-        width: 100%;
-        border-radius: 1.25rem; }
-      .Card-data-image-settings {
-        display: none; }
-        @media only screen and (max-width: 37.5em) {
-          .Card-data-image-settings {
-            display: flex;
-            justify-content: space-between;
-            margin-top: .88rem;
-            flex-wrap: wrap; } }
-        .Card-data-image-settings .settings_range {
-          flex: 1 0 100%; }
-    .Card-data-climate {
-      display: flex; }
-    .Card-data-temperature {
-      margin-right: 3.25rem; }
-    .Card-data-buttons {
-      display: flex; }
-      @media only screen and (max-width: 37.5em) {
-        .Card-data-buttons {
-          justify-content: space-between; } }
-      .Card-data-buttons_btn {
-        width: 8.25rem;
-        height: 3.38rem;
-        background: #E5E5E5;
-        border-radius: 8px; }
-        @media only screen and (max-width: 37.5em) {
-          .Card-data-buttons_btn {
-            height: 2.25rem; } }
-        .Card-data-buttons_btn:first-child {
-          background: #FFD93E;
-          margin-right: 1.13rem; }
-          @media only screen and (max-width: 37.5em) {
-            .Card-data-buttons_btn:first-child {
-              margin-right: .25rem; } }
-        .Card-data-buttons_btn:hover {
-          background: #FFD93E;
-          cursor: pointer; }
-    .Card-data-albumcover {
-      margin-right: 1rem; }
-      .Card-data-albumcover_img {
-        width: 3.31rem;
-        border-radius: 20%; }
-    .Card-data-music {
-      width: 100%; }
   .Card-HoverIcon {
     display: none; }
   .Card:hover {
@@ -485,6 +433,59 @@ body {
       .Card:hover .Card-HoverIcon_bottom {
         bottom: 1.25rem; }
 
+.CardData {
+  grid-area: data;
+  align-self: end;
+  z-index: 2; }
+  .CardData-ImageBox {
+    overflow: hidden; }
+    .CardData-ImageBox-Image {
+      width: 100%;
+      border-radius: 1.25rem; }
+    .CardData-ImageBox-Settings {
+      display: none; }
+      @media only screen and (max-width: 37.5em) {
+        .CardData-ImageBox-Settings {
+          display: flex;
+          justify-content: space-between;
+          margin-top: .88rem;
+          flex-wrap: wrap; } }
+      .CardData-ImageBox-Settings .Settings_range {
+        flex: 1 0 100%; }
+  .CardData-Climate {
+    display: flex; }
+  .CardData-Temperature {
+    margin-right: 3.25rem; }
+  .CardData-Buttons {
+    display: flex; }
+    @media only screen and (max-width: 37.5em) {
+      .CardData-Buttons {
+        justify-content: space-between; } }
+    .CardData-Buttons_btn {
+      width: 8.25rem;
+      height: 3.38rem;
+      background: #E5E5E5;
+      border-radius: 8px; }
+      @media only screen and (max-width: 37.5em) {
+        .CardData-Buttons_btn {
+          height: 2.25rem; } }
+      .CardData-Buttons_btn:first-child {
+        background: #FFD93E;
+        margin-right: 1.13rem; }
+        @media only screen and (max-width: 37.5em) {
+          .CardData-Buttons_btn:first-child {
+            margin-right: .25rem; } }
+      .CardData-Buttons_btn:hover {
+        background: #FFD93E;
+        cursor: pointer; }
+  .CardData-Albumcover {
+    margin-right: 1rem; }
+    .CardData-Albumcover-Image {
+      width: 3.31rem;
+      border-radius: 20%; }
+  .CardData-Music {
+    width: 100%; }
+
 .Music-Header, .Music-Player, .Music-Track, .Music-Icons {
   display: flex;
   align-items: center; }
@@ -492,7 +493,7 @@ body {
 .Music-Header {
   margin-bottom: 1.25rem; }
 
-.Music_Img {
+.Music-Image {
   width: 3.31rem;
   border-radius: 20%; }
 
@@ -503,23 +504,23 @@ body {
 
 .Music-Track {
   width: 100%; }
-  .Music-Track_range {
+  .Music-Track-Range {
     flex: 1 1 100%;
     cursor: pointer;
     -webkit-appearance: none; }
-    .Music-Track_range:focus {
+    .Music-Track-Range:focus {
       outline: none; }
-    .Music-Track_range::-webkit-slider-runnable-track {
+    .Music-Track-Range::-webkit-slider-runnable-track {
       border: 1px solid #979797;
       height: .06rem; }
-    .Music-Track_range::-moz-range-track {
+    .Music-Track-Range::-moz-range-track {
       border: 1px solid #979797; }
-    .Music-Track_range::-ms-thumb {
+    .Music-Track-Range::-ms-thumb {
       border: 1px solid #979797; }
-    .Music-Track_range::-moz-range-thumb {
+    .Music-Track-Range::-moz-range-thumb {
       background: rgba(216, 216, 216, 0.3);
       border-radius: 4.5px; }
-    .Music-Track_range::-webkit-slider-thumb {
+    .Music-Track-Range::-webkit-slider-thumb {
       -webkit-appearance: none;
       transform: translateY(-50%);
       background: rgba(216, 216, 216, 0.3);
@@ -529,24 +530,24 @@ body {
 
 .Music-Player {
   width: 100%; }
-  .Music-Player_range {
+  .Music-Player-Range {
     width: 100%;
     flex: 1 1 100%;
     -webkit-appearance: none; }
-    .Music-Player_range::-webkit-slider-runnable-track {
+    .Music-Player-Range::-webkit-slider-runnable-track {
       border-radius: 2px;
       background-color: rgba(216, 216, 216, 0.3);
       height: .25rem; }
-    .Music-Player_range::-moz-range-track {
+    .Music-Player-Range::-moz-range-track {
       border-radius: 2px;
       background-color: rgba(216, 216, 216, 0.3); }
-    .Music-Player_range::-ms-thumb {
+    .Music-Player-Range::-ms-thumb {
       border-radius: 2px;
       background-color: rgba(216, 216, 216, 0.3); }
-    .Music-Player_range::-moz-range-thumb {
+    .Music-Player-Range::-moz-range-thumb {
       background: #605757;
       border-radius: 26px; }
-    .Music-Player_range::-webkit-slider-thumb {
+    .Music-Player-Range::-webkit-slider-thumb {
       -webkit-appearance: none;
       transform: translateY(-30%);
       background: #605757;
@@ -554,10 +555,10 @@ body {
       height: 1rem;
       width: 1rem; }
 
-.Music-icons_item:first-child {
+.Music-Icons-Item:first-child {
   margin-right: 1.69rem; }
 
-.Music-icons_item:nth-child(2) {
+.Music-Icons-Item:nth-child(2) {
   margin-right: .2rem; }
 
 .Icon_headerNav {

@@ -38,13 +38,13 @@
 
     &-s {
 
-        .Card-type_top,
-        .Card-type_bottom {
+        .Card-Type_top,
+        .Card-Type_bottom {
 
             grid-row-gap: $grid-gap;
         }
 
-        .Card-type_top {
+        .Card-Type_top {
             padding: .86rem $grid-gap 1.25rem 1.31rem;
             grid-template-areas: "header header"
                 "source source"
@@ -60,7 +60,7 @@
             }
         }
 
-        .Card-type_bottom {
+        .Card-Type_bottom {
             padding: 0 1.25rem 0 1.31rem;
 
             @include responsive(phone) {
@@ -73,8 +73,8 @@
 
     &-m {
 
-        .Card-type_top,
-        .Card-type_bottom {
+        .Card-Type_top,
+        .Card-Type_bottom {
             grid-row-gap: 1.33rem;
         }
 
@@ -89,7 +89,7 @@
             }
         }
 
-        .Card-type_bottom {
+        .Card-Type_bottom {
             padding: $grid-gap;
 
             @include responsive(phone) {
@@ -97,7 +97,7 @@
             }
         }
 
-        .Card_time-text {
+        .Card_timeText {
             text-align: right;
         }
 
@@ -110,7 +110,7 @@
             grid-row-gap: 1.5rem;
         }
 
-        .Card-type_top {
+        .Card-Type_top {
             grid-template-areas: " header header"
                 "source time";
             padding: $grid-gap;
@@ -120,7 +120,7 @@
             }
         }
 
-        .Card-type_bottom {
+        .Card-Type_bottom {
             padding: 0 $grid-gap $grid-gap $grid-gap;
 
             @include responsive(phone) {
@@ -128,7 +128,7 @@
             }
         }
 
-        .Card_time-text {
+        .Card_timeText {
             text-align: right;
         }
 
@@ -138,7 +138,7 @@
         }
     }
 
-    &-critical {
+    &_critical {
         background-color: $card-critical-color;
         color: white;
 
@@ -163,13 +163,13 @@
         }
     }
 
-    &-info {
+    &-Info {
         background-color: $card-color;
         color: $color-dark;
 
     }
 
-    &-header {
+    &-Header {
         grid-area: header;
         width: 100%;
         display: flex;
@@ -180,117 +180,29 @@
         }
     }
 
-    &-title {
+    &-Title {
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
 
     }
 
-    &-source {
+    &-Source {
         grid-area: source;
         align-self: end;
     }
 
-    &-time {
+    &-Time {
         grid-area: time;
         align-self: end;
     }
 
-    &-description {
+    &-Description {
         grid-area: description;
         z-index: 2;
     }
 
-    &-data {
-        grid-area: data;
-        align-self: end;
-        z-index: 2;
 
-        &-image {
-            overflow: hidden;
-
-            &_img {
-                width: 100%;
-                border-radius: $grid-gap;
-            }
-
-            &-settings {
-                display: none;
-
-                @include responsive(phone) {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: .88rem;
-                    flex-wrap: wrap;
-                }
-
-                .settings_range {
-                    flex: 1 0 100%;
-                }
-            }
-        }
-
-        &-climate {
-            display: flex;
-        }
-
-        &-temperature {
-            margin-right: 3.25rem;
-        }
-
-        &-buttons {
-            display: flex;
-
-            @include responsive(phone) {
-                justify-content: space-between;
-            }
-
-            &_btn {
-                width: 8.25rem;
-                height: 3.38rem;
-                background: $button-color;
-                border-radius: 8px;
-
-                @include responsive(phone) {
-                    height: 2.25rem;
-
-                }
-
-                &:first-child {
-                    background: $button-active-color;
-                    margin-right: 1.13rem;
-
-                    @include responsive(phone) {
-                        margin-right: .25rem;
-                    }
-                }
-
-                &:hover {
-                    background: $button-active-color;
-                    cursor: pointer;
-                }
-
-            }
-        }
-
-        &-albumcover {
-            &_img {
-                width: 3.31rem;
-                border-radius: 20%;
-            }
-
-            margin-right: 1rem;
-        }
-
-        &-music {
-            width: 100%;
-
-
-        }
-
-
-    }
 
     &-HoverIcon {
         display: none;
@@ -332,6 +244,96 @@
 
 }
 
+.CardData {
+    grid-area: data;
+    align-self: end;
+    z-index: 2;
+
+    &-ImageBox {
+        overflow: hidden;
+
+        &-Image {
+            width: 100%;
+            border-radius: $grid-gap;
+        }
+
+        &-Settings {
+            display: none;
+
+            @include responsive(phone) {
+                display: flex;
+                justify-content: space-between;
+                margin-top: .88rem;
+                flex-wrap: wrap;
+            }
+
+            .Settings_range {
+                flex: 1 0 100%;
+            }
+        }
+    }
+
+    &-Climate {
+        display: flex;
+    }
+
+    &-Temperature {
+        margin-right: 3.25rem;
+    }
+
+    &-Buttons {
+        display: flex;
+
+        @include responsive(phone) {
+            justify-content: space-between;
+        }
+
+        &_btn {
+            width: 8.25rem;
+            height: 3.38rem;
+            background: $button-color;
+            border-radius: 8px;
+
+            @include responsive(phone) {
+                height: 2.25rem;
+
+            }
+
+            &:first-child {
+                background: $button-active-color;
+                margin-right: 1.13rem;
+
+                @include responsive(phone) {
+                    margin-right: .25rem;
+                }
+            }
+
+            &:hover {
+                background: $button-active-color;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    &-Albumcover {
+        &-Image {
+            width: 3.31rem;
+            border-radius: 20%;
+        }
+
+        margin-right: 1rem;
+    }
+
+    &-Music {
+        width: 100%;
+
+
+    }
+
+
+}
+
 .Music {
 
     &-Header,
@@ -346,7 +348,7 @@
         margin-bottom: $grid-gap;
     }
 
-    &_Img {
+    &-Image {
         width: 3.31rem;
         border-radius: 20%;
     }
@@ -362,7 +364,7 @@
     &-Track {
         width: 100%;
 
-        &_range {
+        &-Range {
             flex: 1 1 100%;
             cursor: pointer;
             -webkit-appearance: none;
@@ -405,7 +407,7 @@
     &-Player {
         width: 100%;
 
-        &_range {
+        &-Range {
             width: 100%;
             flex: 1 1 100%;
             -webkit-appearance: none;
@@ -442,8 +444,8 @@
         }
     }
 
-    &-icons {
-        &_item {
+    &-Icons {
+        &-Item {
             &:first-child {
                 margin-right: 1.69rem;
             }
