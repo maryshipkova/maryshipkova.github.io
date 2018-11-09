@@ -1,4 +1,4 @@
-.grid{
+.Grid{
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -13,13 +13,13 @@
         grid-template-rows: 4.13rem max-content minmax(3rem,4rem); //4rem 8.75rem
         grid-template-columns: $grid-gap 1fr $grid-gap ;
     }
-    .header{
+    .Header{
         grid-area: header;
     }
-    .content{
+    .Content{
         grid-area: content; 
     }
-    .footer{
+    .Footer{
         grid-area: footer; 
     }
 }

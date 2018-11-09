@@ -1,4 +1,4 @@
-.heading--primary {
+.Heading_primary {
     font-size: 36px;
     color: $color-dark;
     text-align: left;
@@ -8,7 +8,7 @@
     }
 }
 
-.text--nav-link {
+.Header-Nav-Link {
     font-size: 1rem;
     line-height: 20px;
     font-weight: bold;
@@ -21,22 +21,22 @@
     }
 }
 
-.link-active {
+.LinkActive {
     opacity: 1;
 }
 
-.text--footer {
+.Text_footer{
     font-size: 12px;
     color: $color-light-grey;
     letter-spacing: 0.01px;
 }
 
-.text--bold {
+.Text_bold {
     font-weight: bold;
 }
 
-.card {
-    &--heading {
+.Card {
+    &_heading {
         font-size: 24px;
         font-weight: bold;
 
@@ -45,8 +45,8 @@
         }
     }
 
-    &--source-text,
-    &--time-text {
+    &_source-text,
+    &_time-text {
         font-size: 18px;
         font-weight: normal;
 
@@ -55,11 +55,11 @@
         }
     }
 
-    &--image-settings {
+    &_image-settings {
         font-size: 12px;
     }
 
-    &--paragraph {
+    &_paragraph {
         font-size: 20px;
         color: black;
 
@@ -68,8 +68,8 @@
         }
     }
 
-    &__l {
-        .card--paragraph {
+    &_l {
+        .Card_paragraph {
             font-size: 24px;
             color: $color-dark;
 
@@ -80,7 +80,7 @@
     }
 
 
-    &--data {
+    &_data {
 
         &-climate {
             font-size: 18px;

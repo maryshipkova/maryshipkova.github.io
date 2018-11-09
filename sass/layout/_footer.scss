@@ -1,16 +1,16 @@
-.footer{
+.Footer{
     display: flex;
     align-items: center;
     border-top: 1px solid $color-border;
 
     
-    &__list{
+    &-List{
         width: 100%;
         display: flex;
         padding-left: 2.5rem;
     }
 
-    &__item{
+    &-Item{
         display: inline-block;
         margin-right: 1rem;
 

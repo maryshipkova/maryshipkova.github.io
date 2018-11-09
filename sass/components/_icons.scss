@@ -1,6 +1,10 @@
-.icon {
+.Icon {
 
-    &--card {
+    &_headerNav {
+        width: 1rem;
+    }
+
+    &_card {
 
         width: 3.25rem;
         height: 3.25rem;
@@ -11,24 +15,22 @@
             height: 2.25rem;
         }
 
-        &__hover {
+        &_hover {
             width: 1rem;
             height: 1rem;
         }
 
     }
 
-    &--music {
+    &_music {
         display: block;
         width: 53px;
         height: 52px;
     }
 
-    &--rotated {
+    &_rotated {
         transform: rotate(180deg);
     }
 
-    &--header-nav {
-        width: 1rem;
-    }
+
 }

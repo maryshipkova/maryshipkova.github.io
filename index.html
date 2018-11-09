@@ -8,188 +8,187 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Яндекс.Дом</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 </head>
 
 <body>
-    <div class="grid">
-        <header class="header">
-            <div class="header__logo">
-                <img srcset="assets/Logo@1x-min.png 1x, assets/Logo@2x-min.png 2x" src="assets/Logo@2x-min.png" alt="Logo" class="logo">
+    <div class="Grid">
+        <header class="Header">
+            <div class="Header-Logo">
+                <img class="Logo" srcset="assets/Logo@1x-min.png 1x, assets/Logo@2x-min.png 2x" src="assets/Logo@2x-min.png" alt="Logo" >
             </div>
-            <nav class="header__nav">
-                <label for="header-toggle" class="header__nav__toggle">
+            <nav class="Header-Nav">
+                <label for="header-toggle" class="Header-Nav-Toggle">
                     <img srcset="assets/icon_list_m-min.png 1x, assets/icon_list_m@2x-min.png 2x" src="assets/icon_list_m-min.png"
-                        alt="Logo" class="icon--header-nav">
+                        alt="Logo" class="Icon_headerNav">
                 </label>
-                <input type="checkbox" class="header__nav__checkbox" id="header-toggle">
-                <ul class="header__nav__list">
-                    <li class="header__nav__item">
-                        <a href="#" class="text--nav-link link-active">События</a>
+                <input type="checkbox" class="Header-Nav-Checkbox" id="header-toggle">
+                <ul class="Header-Nav-List">
+                    <li class="Header-Nav-Item">
+                        <a href="#" class="Header-Nav-Link">События</a>
                     </li>
-                    <li class="header__nav__item">
-                        <a href="#" class="text--nav-link">Сводка</a>
+                    <li class="Header-Nav-Item">
+                        <a href="#" class="Header-Nav-Link">Сводка</a>
                     </li>
-                    <li class="header__nav__item">
-                        <a href="#" class="text--nav-link">Устройства</a>
+                    <li class="Header-Nav-Item">
+                        <a href="#" class="Header-Nav-Link">Устройства</a>
                     </li>
-                    <li class="header__nav__item">
-                        <a href="#" class="text--nav-link">Сценарии</a>
+                    <li class="Header-Nav-Item">
+                        <a href="#" class="Header-Nav-Link">Сценарии</a>
                     </li>
                 </ul>
             </nav>
         </header>
 
-        <main class="content">
-            <div class="content__header">
-                <h1 class="heading--primary">
+        <main class="Content">
+            <div class="Content-Header">
+                <h1 class="Heading_primary">
                     Лента событий
                 </h1>
             </div>
-            <section class="events" id="events">
+            <section class="Events" id="events">
 
             </section>
         </main>
 
 
-        <footer class="footer">
-            <ul class="footer__list">
-                <li class="footer__item">
-                    <a href="#" class="text--footer">Помощь</a>
+        <footer class="Footer">
+            <ul class="Footer-List">
+                <li class="Footer-Item">
+                    <a href="#" class="Text_footer">Помощь</a>
                 </li>
-                <li class="footer__item">
-                    <a href="#" class="text--footer">Обратная связь</a>
+                <li class="Footer-Item">
+                    <a href="#" class="Text_footer">Обратная связь</a>
                 </li>
-                <li class="footer__item">
-                    <a href="#" class="text--footer">Разработчикам</a>
+                <li class="Footer-Item">
+                    <a href="#" class="Text_footer">Разработчикам</a>
                 </li>
-                <li class="footer__item">
-                    <a href="#" class="text--footer">Условия использования</a>
+                <li class="Footer-Item">
+                    <a href="#" class="Text_footer">Условия использования</a>
                 </li>
-                <li class="footer__item">
+                <li class="Footer-Item">
                     <a  target="blank" href="https://docviewer.yandex.ru/view/1130000031416100/?*=0XCqW4FslxHh%2FIKRNc5ABV7dPqh7InVybCI6InlhLXdpa2k6Ly93aWtpLWFwaS55YW5kZXgucnUvc2hyaS0yMDE4LWlpL2hvbWV3b3JrL2FkYXB0aXZuYWphLXZqb3JzdGthL2xpY2Vuc2UucGRmIiwidGl0bGUiOiJsaWNlbnNlLnBkZiIsInVpZCI6IjExMzAwMDAwMzE0MTYxMDAiLCJ5dSI6IjIzMTQyNzc1NDE1MTIyOTMwMDkiLCJub2lmcmFtZSI6ZmFsc2UsInRzIjoxNTM4ODQxMjA5NjIzfQ%3D%3D"
-                        class="text--footer">Лицензия</a>
+                        class="Text_footer">Лицензия</a>
                 </li>
 
-                <li class="footer__item">
-                    <a href="#" class="text--footer">&copy; 2001–2017 ООО «Яндекс»</a>
+                <li class="Footer-Item">
+                    <a href="#" class="Text_footer">&copy; 2001–2017 ООО «Яндекс»</a>
                 </li>
             </ul>
         </footer>
-    </div><!-- grid -->
+    </div><!_ grid _>
 
     <template id="card-template">
-        <div class="card">
-            <div class="card__hover-icon card__hover-icon--top">
-                <svg class="icon--card__hover">
+        <div class="Card">
+            <div class="Card-hover-icon Card-hover-Icon_top">
+                <svg class="Icon_Card-hover">
                     <use xlink:href="assets/cross.svg#Events"></use>
                 </svg>
             </div>
-            <div class="card__hover-icon  card__hover-icon--bottom">
-                <svg class="icon--card__hover ">
+            <div class="Card-hover-icon  Card-hover-Icon_bottom">
+                <svg class="Icon_Card-hover ">
                     <use xlink:href="assets/Next.svg#Events"></use>
                 </svg>
             </div>
-            <div class="card__type--top card__info">
-                <div class="card__header">
-                    <div class="card__icon">
-                        <svg class="icon--card" viewBox = "-10 -15 62 65"  preserveAspectRatio="xMinYMid" >
+            <div class="Card-type_top Card-info">
+                <div class="Card-header">
+                    <div class="Card-icon">
+                        <svg class="Icon_Card" viewBox = "-10 -15 62 65"  preserveAspectRatio="xMinYMid" >
                             <use xlink:href=""></use>
                         </svg>
                     </div>
-                    <div class="card__title">
-                        <h2 class="card--heading"></h2>
+                    <div class="Card-title">
+                        <h2 class="Card_heading"></h2>
                     </div>
                 </div>
 
-                <div class="card__source">
-                    <h3 class="card--source-text"></h3>
+                <div class="Card-source">
+                    <h3 class="Card_source-text"></h3>
                 </div>
-                <div class="card__time">
-                    <h3 class="card--time-text"></h3>
+                <div class="Card-time">
+                    <h3 class="Card_time-text"></h3>
                 </div>
             </div>
-            <div class="card__type--bottom card__info">
+            <div class="Card-type_bottom Card-info">
 
-                <div class="card__description">
-                    <p class="card--paragraph"></p>
+                <div class="Card-description">
+                    <p class="Card_paragraph"></p>
                 </div>
-                <div class="card__data">
-                        <div class="card__data__graph">
-                                <img class="card__data__image--img" src="#" alt="" touch-action="none">
+                <div class="Card-data">
+                        <div class="Card-data-graph">
+                                <img class="Card-data-image_img" src="#" alt="" touch-action="none">
                             </div>
 
-                    <div class="card__data__image-box">
-                        <div class="card__data__image">
-                            <img class="card__data__image--img" src="#" alt="" touch-action="none">
+                    <div class="Card-data-image-box">
+                        <div class="Card-data-image">
+                            <img class="Card-data-image_img" src="#" alt="" touch-action="none">
                         </div>
-                        <div class="card__data__image__settings">
-                            <div class="card__data__image__settings--zoom">
-                                <span class="card--image-settings">Приближение: <span class="settings--zoom">100</span>%</span>
+                        <div class="Card-data-image-settings">
+                            <div class="Card-data-image-settings_zoom">
+                                <span class="Card_image-settings">Приближение: <span class="settings_zoom">100</span>%</span>
                             </div>
-                            <div class="card__data__image__settings--brightness">
-                                <span class="card--image-settings">Яркость: <span class="settings--brightness">100</span>%</span>
+                            <div class="Card-data-image-settings_brightness">
+                                <span class="Card_image-settings">Яркость: <span class="settings_brightness">100</span>%</span>
                             </div>
-                            <input type="range" class="music__track--range settings--range" min="-100" max="100" value="0">
-                        </div>
-                    </div>
-
-                    <div class="card__data__climate">
-                        <div class="card__data__temperature">
-                            <p class="card--data-climate"> <span class="card--data-climate text--bold"></span></p>
-                        </div>
-                        <div class="card__data__humidity">
-                            <p class="card--data-climate"> <span class="card--data-climate text--bold"></span></p>
+                            <input type="range" class="music-track_range settings_range" min="-100" max="100" value="0">
                         </div>
                     </div>
 
-
-                    <div class="card__data__buttons">
+                    <div class="Card-data-climate">
+                        <div class="Card-data-temperature">
+                            <p class="Card_data-climate"> <span class="Card_data-climate text_bold"></span></p>
+                        </div>
+                        <div class="Card-data-humidity">
+                            <p class="Card_data-climate"> <span class="Card_data-climate text_bold"></span></p>
+                        </div>
                     </div>
 
-                    <div class="card__data__music">
-                        <div class="music__header">
-                            <div class="card__data__albumcover">
-                                <img class="card__data__albumcover--img" src="" alt="#">
+
+                    <div class="Card-data-buttons">
+                    </div>
+
+                    <div class="Card-data-music">
+                        <div class="music-header">
+                            <div class="Card-data-albumcover">
+                                <img class="Card-data-albumcover_img" src="" alt="#">
                             </div>
 
-                            <div class="music__main">
-                                <div class="card__data__artist">
-                                    <p class="card--data-music-title">
+                            <div class="music-main">
+                                <div class="Card-data-artist">
+                                    <p class="Card_data-music-title">
                                     </p>
                                 </div>
-                                <div class="music__track">
-                                    <input type="range" class="music__track--range">
-                                    <div class="card__data__track--length music__track--length">
-                                        <p class="card--data-music"></p>
+                                <div class="music-track">
+                                    <input type="range" class="music-track_range">
+                                    <div class="Card-data-track_length music-track_length">
+                                        <p class="Card_data-music"></p>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="music__player">
-                            <div class="music__icons">
-                                <div class="music__icons--item">
-                                    <svg class="icon--music">
+                        <div class="music-player">
+                            <div class="music-icons">
+                                <div class="music-icons_item">
+                                    <svg class="Icon_music">
                                         <use xlink:href="assets/Prev.svg#Events"></use>
                                     </svg>
                                 </div>
-                                <div class="music__icons--item">
-                                    <svg class="icon--music icon--rotated">
+                                <div class="music-icons_item">
+                                    <svg class="Icon_music Icon_rotated">
                                         <use xlink:href="assets/Prev.svg#Events"></use>
                                     </svg>
                                 </div>
                             </div>
 
-                            <input type="range" class="music__player--range">
-                            <div class="card__data__volume">
-                                <p class="card--data-music"></p>
+                            <input type="range" class="music-player_range">
+                            <div class="Card-data-volume">
+                                <p class="Card_data-music"></p>
                             </div>
                         </div>
                     </div>
 
                 </div>
-            </div> <!-- bottom -->
+            </div> <!_ bottom _>
 
         </div>
     </template>
