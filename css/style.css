@@ -70,12 +70,12 @@ body {
   color: #333333;
   background-color: #FFFFFF; }
 
-.Heading_primary {
+.Heading-Primary {
   font-size: 36px;
   color: #333333;
   text-align: left; }
   @media only screen and (max-width: 37.5em) {
-    .Heading_primary {
+    .Heading-Primary {
       font-size: 24px; } }
 
 .Header-Nav-Link {
@@ -89,68 +89,68 @@ body {
 .LinkActive {
   opacity: 1; }
 
-.Text_footer {
+.Text_type_footer {
   font-size: 12px;
   color: #858585;
   letter-spacing: 0.01px; }
 
-.Text_bold {
+.Text_type_bold {
   font-weight: bold; }
 
-.Card_heading {
+.Card_text_heading {
   font-size: 24px;
   font-weight: bold; }
   @media only screen and (max-width: 37.5em) {
-    .Card_heading {
+    .Card_text_heading {
       font-size: 14px; } }
 
-.Card_sourceText, .Card_timeText {
+.Card_text_sourceText, .Card_text_timeText {
   font-size: 18px;
   font-weight: normal; }
   @media only screen and (max-width: 37.5em) {
-    .Card_sourceText, .Card_timeText {
+    .Card_text_sourceText, .Card_text_timeText {
       font-size: 12px; } }
 
-.Card_imageSettings {
+.Card_text_imageSettings {
   font-size: 12px; }
 
-.Card_paragraph {
+.Card_text_paragraph {
   font-size: 20px;
   color: black; }
   @media only screen and (max-width: 37.5em) {
-    .Card_paragraph {
+    .Card_text_paragraph {
       font-size: 18px; } }
 
-.Card_l .Card_paragraph {
+.Card_l .Card_text_paragraph {
   font-size: 24px;
   color: #333333; }
   @media only screen and (max-width: 37.5em) {
-    .Card_l .Card_paragraph {
+    .Card_l .Card_text_paragraph {
       font-size: 18px; } }
 
-.CardData_climate {
+.CardData_text_climate {
   font-size: 18px;
   color: black; }
   @media only screen and (max-width: 37.5em) {
-    .CardData_climate {
+    .CardData_text_climate {
       font-size: 14px; } }
 
-.CardData_paragraph {
+.CardData_text_paragraph {
   font-size: 20px;
   color: black; }
 
-.CardData_musicTitle {
+.CardData_text_musicTitle {
   font-size: 20px;
   color: black; }
   @media only screen and (max-width: 37.5em) {
-    .CardData_musicTitle {
+    .CardData_text_musicTitle {
       font-size: 18px; } }
 
-.CardData_music {
+.CardData_text_music {
   font-size: 14px;
   color: rgba(161, 161, 161, 0.84); }
   @media only screen and (max-width: 37.5em) {
-    .CardData_music {
+    .CardData_text_music {
       font-size: 14px; } }
 
 .Grid {
@@ -561,25 +561,25 @@ body {
 .Music-Icons-Item:nth-child(2) {
   margin-right: .2rem; }
 
-.Icon_headerNav {
+.Icon-HeaderNav {
   width: 1rem; }
 
-.Icon_card {
+.Icon-Card {
   width: 3.25rem;
   height: 3.25rem;
   display: flex; }
   @media only screen and (max-width: 37.5em) {
-    .Icon_card {
+    .Icon-Card {
       width: 2.25rem;
       height: 2.25rem; } }
-  .Icon_card_hover {
+  .Icon-Card-Hover {
     width: 1rem;
     height: 1rem; }
 
-.Icon_music {
+.Icon-Music {
   display: block;
   width: 53px;
   height: 52px; }
 
-.Icon_rotated {
+.Icon-Rotated {
   transform: rotate(180deg); }

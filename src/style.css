@@ -70,12 +70,12 @@ body {
   color: #333333;
   background-color: #FFFFFF; }
 
-.Heading_primary {
+.Heading-Primary {
   font-size: 36px;
   color: #333333;
   text-align: left; }
   @media only screen and (max-width: 37.5em) {
-    .Heading_primary {
+    .Heading-Primary {
       font-size: 24px; } }
 
 .Header-Nav-Link {
@@ -89,68 +89,68 @@ body {
 .LinkActive {
   opacity: 1; }
 
-.Text_footer {
+.Text_type_footer {
   font-size: 12px;
   color: #858585;
   letter-spacing: 0.01px; }
 
-.Text_bold {
+.Text_type_bold {
   font-weight: bold; }
 
-.Card_heading {
+.Text-Card_type_heading {
   font-size: 24px;
   font-weight: bold; }
   @media only screen and (max-width: 37.5em) {
-    .Card_heading {
+    .Text-Card_type_heading {
       font-size: 14px; } }
 
-.Card_sourceText, .Card_timeText {
+.Text-Card_type_sourceText, .Text-Card_type_timeText {
   font-size: 18px;
   font-weight: normal; }
   @media only screen and (max-width: 37.5em) {
-    .Card_sourceText, .Card_timeText {
+    .Text-Card_type_sourceText, .Text-Card_type_timeText {
       font-size: 12px; } }
 
-.Card_imageSettings {
+.Text-Card_type_settings {
   font-size: 12px; }
 
-.Card_paragraph {
+.Text-Card_type_paragraph {
   font-size: 20px;
   color: black; }
   @media only screen and (max-width: 37.5em) {
-    .Card_paragraph {
+    .Text-Card_type_paragraph {
       font-size: 18px; } }
 
-.Card_l .Card_paragraph {
+.Text-Card_l .Card_type_paragraph {
   font-size: 24px;
   color: #333333; }
   @media only screen and (max-width: 37.5em) {
-    .Card_l .Card_paragraph {
+    .Text-Card_l .Card_type_paragraph {
       font-size: 18px; } }
 
-.CardData_climate {
+.Text-CardData_type_climate {
   font-size: 18px;
   color: black; }
   @media only screen and (max-width: 37.5em) {
-    .CardData_climate {
+    .Text-CardData_type_climate {
       font-size: 14px; } }
 
-.CardData_paragraph {
+.Text-CardData_type_paragraph {
   font-size: 20px;
   color: black; }
 
-.CardData_musicTitle {
+.Text-CardData_type_musicTitle {
   font-size: 20px;
   color: black; }
   @media only screen and (max-width: 37.5em) {
-    .CardData_musicTitle {
+    .Text-CardData_type_musicTitle {
       font-size: 18px; } }
 
-.CardData_music {
+.Text-CardData_type_music {
   font-size: 14px;
   color: rgba(161, 161, 161, 0.84); }
   @media only screen and (max-width: 37.5em) {
-    .CardData_music {
+    .Text-CardData_type_music {
       font-size: 14px; } }
 
 .Grid {
@@ -260,28 +260,28 @@ body {
       grid-template-columns: 1fr;
       grid-gap: 1rem; } }
 
-.Card_s {
+.Card_size_s {
   grid-column-start: span 2;
   grid-row-start: span 1; }
   @media only screen and (max-width: 37.5em) {
-    .Card_s {
+    .Card_size_s {
       grid-column-start: span 1; } }
 
-.Card_m {
+.Card_size_m {
   grid-column-start: span 3;
   grid-row-start: span 1; }
   @media only screen and (max-width: 56.25em) {
-    .Card_m {
+    .Card_size_m {
       grid-column-start: span 4; } }
   @media only screen and (max-width: 37.5em) {
-    .Card_m {
+    .Card_size_m {
       grid-column-start: span 1; } }
 
-.Card_l {
+.Card_size_l {
   grid-column-start: span 4;
   grid-row-start: span 3; }
   @media only screen and (max-width: 37.5em) {
-    .Card_l {
+    .Card_size_l {
       grid-column-start: span 1; } }
 
 .Footer {
@@ -314,76 +314,27 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: relative; }
-  .Card-Type-Top {
+  .Card:hover {
+    background: #FFD93E;
+    cursor: pointer; }
+  .Card-Top {
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: 1.25rem; }
-  .Card-Type-Bottom {
+  .Card-Bottom {
     flex: 1 0;
     grid-area: info;
     display: grid;
-    grid-template-areas: "description description" "data data";
+    grid-template-areas: "description description" "data data";
     position: relative; }
-  .Card_s .Card-Type-Top,
-  .Card_s .Card-Type-Bottom {
-    grid-row-gap: 1.25rem; }
-  .Card_s .Card-Type-Top {
-    padding: 0.86rem 1.25rem 1.25rem 1.31rem;
-    grid-template-areas: "header header" "source source" "time time"; }
-    @media only screen and (max-width: 37.5em) {
-      .Card_s .Card-Type-Top {
-        grid-template-areas: "header header" "source time"; } }
-    @media only screen and (max-width: 37.5em) {
-      .Card_s .Card-Type-Top {
-        padding: 1rem; } }
-  .Card_s .Card-Type-Bottom {
-    padding: 0 1.25rem 0 1.31rem; }
-    @media only screen and (max-width: 37.5em) {
-      .Card_s .Card-Type-Bottom {
-        padding: 0 1rem 0 1rem; } }
-  .Card_m .Card-Type-Top,
-  .Card_m .Card-Type-Bottom {
-    grid-row-gap: 1.33rem; }
-  .Card_m .Card-Type-Top {
-    grid-template-areas: "header header" "source time";
-    padding: 1.25rem 1.25rem 0.5rem 1.25rem; }
-    @media only screen and (max-width: 37.5em) {
-      .Card_m .Card-Type-Top {
-        padding: 1rem 1rem 1rem 1rem; } }
-  .Card_m .Card-Type-Bottom {
-    padding: 1.25rem; }
-    @media only screen and (max-width: 37.5em) {
-      .Card_m .Card-Type-Bottom {
-        padding: 1rem; } }
-  .Card_m .Card_timeText {
-    text-align: right; }
-  .Card_l .Card-type-Top,
-  .Card_l .Card-Type-Bottom {
-    grid-row-gap: 1.5rem; }
-  .Card_l .Card-Type-Top {
-    grid-template-areas: " header header" "source time";
-    padding: 1.25rem; }
-    @media only screen and (max-width: 37.5em) {
-      .Card_l .Card-Type-Top {
-        padding: 1rem 1rem 1rem 1rem; } }
-  .Card_l .Card-Type-Bottom {
-    padding: 0 1.25rem 1.25rem 1.25rem; }
-    @media only screen and (max-width: 37.5em) {
-      .Card_l .Card-Type-Bottom {
-        padding: 0 1rem 1rem 1rem; } }
-  .Card_l .Card_timeText {
-    text-align: right; }
-  .Card_l .Card-Description {
-    margin-right: 1.5rem;
-    color: #333333; }
-  .Card_critical {
+  .Card-Top_type_critical, .Card-Bottom_type_critical {
     background-color: #DB5341;
     color: white; }
-    .Card_critical::after {
+    .Card-Top_type_critical::after, .Card-Bottom_type_critical::after {
       content: "";
       display: block;
       height: .0005rem; }
-    .Card_critical ~ .Card-Type-Bottom::before {
+    .Card-Top_type_critical ~ .Card-Bottom::before, .Card-Bottom_type_critical ~ .Card-Bottom::before {
       content: "";
       display: block;
       height: 1.25rem;
@@ -393,8 +344,60 @@ body {
       border-top-right-radius: 1.25rem;
       position: absolute;
       top: -1rem; }
-  .Card_info {
+  .Card-Top_type_info, .Card-Bottom_type_info {
     background-color: #FAFAFA;
+    color: #333333; }
+  .Card_size_s .Card-Top,
+  .Card_size_s .Card-Bottom {
+    grid-row-gap: 1.25rem; }
+  .Card_size_s .Card-Top {
+    padding: 0.86rem 1.25rem 1.25rem 1.31rem;
+    grid-template-areas: "header header" "source source" "time time"; }
+    @media only screen and (max-width: 37.5em) {
+      .Card_size_s .Card-Top {
+        grid-template-areas: "header header" "source time"; } }
+    @media only screen and (max-width: 37.5em) {
+      .Card_size_s .Card-Top {
+        padding: 1rem; } }
+  .Card_size_s .Card-Bottom {
+    padding: 0 1.25rem 0 1.31rem; }
+    @media only screen and (max-width: 37.5em) {
+      .Card_size_s .Card-Bottom {
+        padding: 0 1rem 0 1rem; } }
+  .Card_size_m .Card-Top,
+  .Card_size_m .Card-Bottom {
+    grid-row-gap: 1.33rem; }
+  .Card_size_m .Card-Top {
+    grid-template-areas: "header header" "source time";
+    padding: 1.25rem 1.25rem 0.5rem 1.25rem; }
+    @media only screen and (max-width: 37.5em) {
+      .Card_size_m .Card-Top {
+        padding: 1rem 1rem 1rem 1rem; } }
+  .Card_size_m .Card-Bottom {
+    padding: 1.25rem; }
+    @media only screen and (max-width: 37.5em) {
+      .Card_size_m .Card-Bottom {
+        padding: 1rem; } }
+  .Card_size_m .Card_timeText {
+    text-align: right; }
+  .Card_size_l .Card-Top,
+  .Card_size_l .Card-Bottom {
+    grid-row-gap: 1.5rem; }
+  .Card_size_l .Card-Top {
+    grid-template-areas: " header header" "source time";
+    padding: 1.25rem; }
+    @media only screen and (max-width: 37.5em) {
+      .Card_size_l .Card-Top {
+        padding: 1rem 1rem 1rem 1rem; } }
+  .Card_size_l .Card-Bottom {
+    padding: 0 1.25rem 1.25rem 1.25rem; }
+    @media only screen and (max-width: 37.5em) {
+      .Card_size_l .Card-Bottom {
+        padding: 0 1rem 1rem 1rem; } }
+  .Card_size_l .Card_timeText {
+    text-align: right; }
+  .Card_size_l .Card-Description {
+    margin-right: 1.5rem;
     color: #333333; }
   .Card-Header {
     grid-area: header;
@@ -421,7 +424,7 @@ body {
   .Card:hover {
     background-color: #F3F3F3;
     box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5); }
-    .Card:hover .Card_info, .Card:hover .Card_info::before {
+    .Card:hover .Card-Top_type_info, .Card:hover .Card-Bottom_type_info, .Card:hover .Card-Top_type_info::before, .Card:hover .Card-Bottom_type_info::before {
       background-color: #F3F3F3; }
     .Card:hover .Card-HoverIcon {
       display: block;
@@ -450,7 +453,7 @@ body {
           justify-content: space-between;
           margin-top: .88rem;
           flex-wrap: wrap; } }
-      .CardData-ImageBox-Settings .Settings_range {
+      .CardData-ImageBox-Settings-Range {
         flex: 1 0 100%; }
   .CardData-Climate {
     display: flex; }
@@ -478,17 +481,18 @@ body {
       .CardData-Buttons_btn:hover {
         background: #FFD93E;
         cursor: pointer; }
-  .CardData-Albumcover {
-    margin-right: 1rem; }
-    .CardData-Albumcover-Image {
-      width: 3.31rem;
-      border-radius: 20%; }
   .CardData-Music {
     width: 100%; }
 
 .Music-Header, .Music-Player, .Music-Track, .Music-Icons {
   display: flex;
   align-items: center; }
+
+.Music-Albumcover {
+  margin-right: 1rem; }
+  .Music-Albumcover-Image {
+    width: 3.31rem;
+    border-radius: 20%; }
 
 .Music-Header {
   margin-bottom: 1.25rem; }
@@ -499,7 +503,7 @@ body {
 
 .Music-Main {
   width: 100%; }
-  .Music-Main > .Card-data-artist:first-child {
+  .Music-Main > .Music-Artist:first-child {
     margin-bottom: 1rem; }
 
 .Music-Track {
@@ -561,25 +565,25 @@ body {
 .Music-Icons-Item:nth-child(2) {
   margin-right: .2rem; }
 
-.Icon_headerNav {
+.Icon-HeaderNav {
   width: 1rem; }
 
-.Icon_card {
+.Icon-Card {
   width: 3.25rem;
   height: 3.25rem;
   display: flex; }
   @media only screen and (max-width: 37.5em) {
-    .Icon_card {
+    .Icon-Card {
       width: 2.25rem;
       height: 2.25rem; } }
-  .Icon_card_hover {
+  .Icon-Card-Hover {
     width: 1rem;
     height: 1rem; }
 
-.Icon_music {
+.Icon-Music {
   display: block;
   width: 53px;
   height: 52px; }
 
-.Icon_rotated {
+.Icon-Rotated {
   transform: rotate(180deg); }

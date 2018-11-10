@@ -8,7 +8,7 @@
     "build-react": "react-scripts build",
     "test-react": "react-scripts test",
     "eject-react": "react-scripts eject",
-    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "node-sass sass/main.scss src/style.css -w",
     "devserver": "live-server --browser=chrome",
     "start": "npm-run-all --parallel devserver watch:sass",
     "lint": "tslint tes/*.ts --fix",

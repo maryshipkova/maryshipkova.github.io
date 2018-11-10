@@ -1,9 +1,15 @@
 import React, {Component, Fragment} from 'react';
 import './style.css';
 import RichDataImg from './assets/Richdata.png';
+import {cn} from "@bem-react/classname";
+
 
 class Events extends Component {
-
+    cnCard = cn('Card');
+    cnCardData = cn('CardData');
+    cnText = cn('Text');
+    cnIcon = cn('Icon');
+    cnMusic = cn('Music');
     data = {
         "events": [
             {
@@ -166,9 +172,10 @@ class Events extends Component {
     };
 
     events = this.data.events.map((event, i) => {
+
         const description = event.description ?
-            <div className="Card-Description">
-                <p className="Card_paragraph">
+            <div className={this.cnCard('Description')}>
+                <p className={this.cnText('Card', {type: 'paragraph'})}>
                     {event.description}
                 </p>
             </div> : <Fragment></Fragment>;
@@ -178,64 +185,73 @@ class Events extends Component {
         if (event.data) {
             let innerData = <Fragment></Fragment>;
             if (event.data.type === 'graph') {
-                innerData = <div className="CardData-Graph">
-                    <img className="CardData-ImageBox-Image" src={RichDataImg} alt="Richdata.png"
+                innerData = <div className={this.cnCardData('Graph')}>
+                    <img className={this.cnCardData('ImageBox-Image')} src={RichDataImg} alt="Richdata.png"
                          touch-action="none"/>
                 </div>;
             } else if (event.data.image) {
-                innerData = <div className="CardData-image-box">
-                    <div className="CardData-ImageBox">
-                        <img className="CardData-ImageBox-Image" src={`../assets/${event.data.image}.jpg`}
-                             alt={event.data.image} touch-action="none"/>
-                    </div>
-                    <div className="CardData-ImageBox-Settings">
-                        <div className="CardData-ImageBox-Settings_zoom">
-                                    <span className="Card_imageSettings">Приближение: <span
-                                        className="Settings_zoom">100</span>%</span>
+                innerData =
+                    <div className={this.cnCardData('ImageBox')}>
+                        <div className={this.cnCardData('Image')}>
+                            <img className={this.cnCardData('Image-Item')} src={`./assets/${event.data.image}.jpg`}
+                                 alt={event.data.image} touch-action="none"/>
                         </div>
-                        <div className="CardData-ImageBox-Settings_brightness">
-                                    <span className="Card_imageSettings">Яркость: <span
-                                        className="Settings_brightness">100</span>%</span>
+                        <div className={this.cnCardData('ImageBox-Settings')}>
+                            <div className={this.cnCardData('ImageBox-Settings', {type: 'zoom'})}>
+                                    <span className={this.cnText('Card', {type: 'settings'})}>Приближение: <span
+                                        className={this.cnText('Card-', {type: 'settings_zoom'})}>100</span>%</span>
+                            </div>
+                            <div className={this.cnCardData('ImageBox-Settings', {type: 'brightness'})}>
+                                    <span className={this.cnText('Card', {type: 'settings'})}>Яркость: <span
+                                        className={this.cnText('Card-', {type: 'settings_brightness'})}>100</span>%</span>
+                            </div>
+                            <input type="range"
+                                   className={`${this.cnMusic('Track-Range')} ${this.cnCardData('Settings-Range')}`}
+                                   min="-100" max="100"
+                                   value="0"/>
                         </div>
-                        <input type="range" className="Music-Track-Range Settings-Range" min="-100" max="100"
-                               value="0"/>
-                    </div>
-                </div>;
+                    </div>;
             } else if (event.data.temperature) {
                 innerData = <div className="CardData-Climate">
                     <div className="CardData-Temperature">
-                        <p className="CardData_climate">
-                                <span className="CardData_climate Text_bold">
-                                    {event.data.temperature}
+                        <p className={this.cnText('CardData', {type: 'climate'})}>
+                            {'Температура: '}
+                            <span
+                                className={`${this.cnText('CardData', {type: 'climate'})} ${this.cnText({type: "bold"})}`}>
+                                    {event.data.temperature + " C"}
                                 </span>
+
                         </p>
                     </div>
                     <div className="CardData-humidity">
-                        <p className="CardData_climate">
-                                <span className="CardData_climate Text_bold">
-                                    {event.data.humidity}
+                        <p className={this.cnText('CardData', {type: 'climate'})}>
+                            {'Влажность: '}
+                            <span
+                                className={`${this.cnText('CardData', {type: 'climate'})} ${this.cnText({type: "bold"})}`}>
+                                    {event.data.humidity + "%"}
                                 </span>
+
                         </p>
                     </div>
                 </div>;
             } else if (event.data.albumcover) {
-                innerData = <div className="CardData-Music Music">
-                    <div className="Music-header">
-                        <div className="CardData-Albumcover">
-                            <img className="CardData-Albumcover-Image" src={event.data.albumcover}
+                innerData = <div className={`${this.cnCardData('Music')} ${this.cnMusic()}`}>
+                    <div className={this.cnMusic("Header")}>
+                        <div className={this.cnMusic("Albumcover")}>
+                            <img className={this.cnMusic("Albumcover-Image")} src={event.data.albumcover}
                                  alt={event.data.albumcover}/>
                         </div>
 
-                        <div className="Music-Main">
-                            <div className="CardData-Artist">
-                                <p className="CardData_musicTitle">
+                        <div className={this.cnMusic("Main")}>
+                            <div className={this.cnMusic("Artist")}>
+                                <p className={this.cnText('CardData', {type: 'musicTitle'})}>
                                     {event.data.artist} - {event.data.track.name}
                                 </p>
                             </div>
-                            <div className="Music-Track">
-                                <input type="range" className="Music-Track-Range"/>
-                                <div className="CardData-Track-Length Music-Track-Length">
-                                    <p className="CardData_music">
+                            <div className={this.cnMusic("Track")}>
+                                <input type="range" className={this.cnMusic("Track-Range")}/>
+                                <div className={`${this.cnMusic("Track-Length")} ${this.cnCardData("Track-Length")}`}>
+                                    <p className={this.cnText('CardData', {type: 'music'})}>
                                         {event.data.track.length}
                                     </p>
                                 </div>
@@ -268,7 +284,8 @@ class Events extends Component {
             } else if (event.data.buttons) {
                 innerData = <div className="CardData-Buttons">
                     <button className="CardData-Buttons_btn">
-                            <span className="CardData_paragraph Text_bold">
+                            <span
+                                className={`${this.cnText('CardData', {type: "paragraph"})} ${this.cnText({type: "bold"})}`}>
                                 {event.data.buttons[0]}
                              </span>
                     </button>
@@ -280,50 +297,52 @@ class Events extends Component {
                 </div>;
             }
 
-            cardData = <div className="Card-Data CardData">{innerData}</div>
+            cardData = <div className={`${this.cnCard('Data')} ${this.cnCardData()}`}>{innerData}</div>
         }
 
-        return <div className={`Card Card_${event.size}`} key={i}>
-            <div className="Card-HoverIcon Card-HoverIcon_top">
-                <svg className="Icon_card_hover">
-                    <use xlinkHref="assets/cross.svg#Events"></use>
+        const bottom = event.data || event.description ?
+            <div className={this.cnCard('Bottom', {type: 'info'})}>
+                {description}
+                {cardData}
+            </div> : <Fragment></Fragment>;
+        return <div className={this.cnCard({size: event.size})} key={i}>
+            <div className={`${this.cnCard('HoverIcon')} Card-HoverIcon_top`}>
+                <svg className={this.cnIcon('Card-Hover')}>
+                    <use xlinkHref="./assets/cross.svg#Events"></use>
                 </svg>
             </div>
-            <div className="Card-HoverIcon  Card-HoverIcon_bottom">
-                <svg className="Icon_card_hover">
-                    <use xlinkHref="assets/Next.svg#Events"></use>
+            <div className={`${this.cnCard('HoverIcon')} Card-HoverIcon_bottom`}>
+                <svg className={this.cnIcon('Card-Hover')}>
+                    <use xlinkHref="./assets/Next.svg#Events"></use>
                 </svg>
             </div>
 
-            <div className={`Card-Type-Top Card_${event.type}`}>
-                <div className="Card-Header">
-                    <div className="Card-icon">
-                        <svg className="Icon_card" viewBox="-10 -15 62 65" preserveAspectRatio="xMinYMid">
-                            <use xlinkHref={`assets/${event.icon}.svg#Events`}></use>
+            <div className={this.cnCard('Top', {type: event.type})}>
+                <div className={this.cnCard('Header')}>
+                    <div className={this.cnCard('Icon')}>
+                        <svg className={this.cnIcon('Card')} viewBox="-10 -15 62 65" preserveAspectRatio="xMinYMid">
+                            <use xlinkHref={`./assets/${event.icon}.svg#Events`}></use>
                         </svg>
                     </div>
-                    <div className="Card-Title">
-                        <h2 className="Card_heading">
+                    <div className={this.cnCard('Title')}>
+                        <h2 className={this.cnText('Card', {type: 'heading'})}>
                             {event.title}
                         </h2>
                     </div>
                 </div>
 
-                <div className="Card-Source">
-                    <h3 className="Card_sourceText">
+                <div className={this.cnCard('Source')}>
+                    <h3 className={this.cnText('Card', {type: 'sourceText'})}>
                         {event.source}
                     </h3>
                 </div>
-                <div className="Card-time">
-                    <h3 className="Card_timeText">
+                <div className={this.cnCard('Time')}>
+                    <h3 className={this.cnText('Card', {type: 'timeText'})}>
                         {event.time}
                     </h3>
                 </div>
             </div>
-            <div className="Card-Type-Bottom Card_info">
-                {description}
-                {cardData}
-            </div>
+            {bottom}
 
         </div>
     });
