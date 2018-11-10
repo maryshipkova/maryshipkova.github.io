@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import './style.css';
+import RichDataImg from './assets/Richdata.png';
 
 class Events extends Component {
 
@@ -164,11 +165,172 @@ class Events extends Component {
         ]
     };
 
+    events = this.data.events.map((event, i) => {
+        const description = event.description ?
+            <div className="Card-Description">
+                <p className="Card_paragraph">
+                    {event.description}
+                </p>
+            </div> : <Fragment></Fragment>;
+
+        let cardData = <Fragment></Fragment>;
+
+        if (event.data) {
+            let innerData = <Fragment></Fragment>;
+            if (event.data.type === 'graph') {
+                innerData = <div className="CardData-Graph">
+                    <img className="CardData-ImageBox-Image" src={RichDataImg} alt="Richdata.png"
+                         touch-action="none"/>
+                </div>;
+            } else if (event.data.image) {
+                innerData = <div className="CardData-image-box">
+                    <div className="CardData-ImageBox">
+                        <img className="CardData-ImageBox-Image" src={`../assets/${event.data.image}.jpg`}
+                             alt={event.data.image} touch-action="none"/>
+                    </div>
+                    <div className="CardData-ImageBox-Settings">
+                        <div className="CardData-ImageBox-Settings_zoom">
+                                    <span className="Card_imageSettings">Приближение: <span
+                                        className="Settings_zoom">100</span>%</span>
+                        </div>
+                        <div className="CardData-ImageBox-Settings_brightness">
+                                    <span className="Card_imageSettings">Яркость: <span
+                                        className="Settings_brightness">100</span>%</span>
+                        </div>
+                        <input type="range" className="Music-Track-Range Settings-Range" min="-100" max="100"
+                               value="0"/>
+                    </div>
+                </div>;
+            } else if (event.data.temperature) {
+                innerData = <div className="CardData-Climate">
+                    <div className="CardData-Temperature">
+                        <p className="CardData_climate">
+                                <span className="CardData_climate Text_bold">
+                                    {event.data.temperature}
+                                </span>
+                        </p>
+                    </div>
+                    <div className="CardData-humidity">
+                        <p className="CardData_climate">
+                                <span className="CardData_climate Text_bold">
+                                    {event.data.humidity}
+                                </span>
+                        </p>
+                    </div>
+                </div>;
+            } else if (event.data.albumcover) {
+                innerData = <div className="CardData-Music Music">
+                    <div className="Music-header">
+                        <div className="CardData-Albumcover">
+                            <img className="CardData-Albumcover-Image" src={event.data.albumcover}
+                                 alt={event.data.albumcover}/>
+                        </div>
+
+                        <div className="Music-Main">
+                            <div className="CardData-Artist">
+                                <p className="CardData_musicTitle">
+                                    {event.data.artist} - {event.data.track.name}
+                                </p>
+                            </div>
+                            <div className="Music-Track">
+                                <input type="range" className="Music-Track-Range"/>
+                                <div className="CardData-Track-Length Music-Track-Length">
+                                    <p className="CardData_music">
+                                        {event.data.track.length}
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="Music-Player">
+                        <div className="Music-Icons">
+                            <div className="Music-Icons-Item">
+                                <svg className="Icon_music">
+                                    <use xlinkHref="./assets/Prev.svg#Events"></use>
+                                </svg>
+                            </div>
+                            <div className="Music-Icons-Item">
+                                <svg className="Icon_music Icon_rotated">
+                                    <use xlinkHref="./assets/Prev.svg#Events"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <input type="range" className="Music-Player-Range"/>
+                        <div className="CardData-Volume">
+                            <p className="CardData-Music">
+                                {event.data.volume}
+                            </p>
+                        </div>
+                    </div>
+                </div>;
+            } else if (event.data.buttons) {
+                innerData = <div className="CardData-Buttons">
+                    <button className="CardData-Buttons_btn">
+                            <span className="CardData_paragraph Text_bold">
+                                {event.data.buttons[0]}
+                             </span>
+                    </button>
+                    <button className="CardData-Buttons_btn">
+                            <span className="CardData_paragraph Text_bold">
+                                {event.data.buttons[1]}
+                             </span>
+                    </button>
+                </div>;
+            }
+
+            cardData = <div className="Card-Data CardData">{innerData}</div>
+        }
+
+        return <div className={`Card Card_${event.size}`} key={i}>
+            <div className="Card-HoverIcon Card-HoverIcon_top">
+                <svg className="Icon_card_hover">
+                    <use xlinkHref="assets/cross.svg#Events"></use>
+                </svg>
+            </div>
+            <div className="Card-HoverIcon  Card-HoverIcon_bottom">
+                <svg className="Icon_card_hover">
+                    <use xlinkHref="assets/Next.svg#Events"></use>
+                </svg>
+            </div>
+
+            <div className={`Card-Type-Top Card_${event.type}`}>
+                <div className="Card-Header">
+                    <div className="Card-icon">
+                        <svg className="Icon_card" viewBox="-10 -15 62 65" preserveAspectRatio="xMinYMid">
+                            <use xlinkHref={`assets/${event.icon}.svg#Events`}></use>
+                        </svg>
+                    </div>
+                    <div className="Card-Title">
+                        <h2 className="Card_heading">
+                            {event.title}
+                        </h2>
+                    </div>
+                </div>
+
+                <div className="Card-Source">
+                    <h3 className="Card_sourceText">
+                        {event.source}
+                    </h3>
+                </div>
+                <div className="Card-time">
+                    <h3 className="Card_timeText">
+                        {event.time}
+                    </h3>
+                </div>
+            </div>
+            <div className="Card-Type-Bottom Card_info">
+                {description}
+                {cardData}
+            </div>
+
+        </div>
+    });
+
     render() {
         return (
-            <Fragment>
-
-            </Fragment>
+            <Fragment>{this.events}</Fragment>
 
         );
     }

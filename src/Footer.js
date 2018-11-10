@@ -7,16 +7,16 @@ class Footer extends Component {
             <Fragment>
                 <ul className="Footer-List">
                     <li className="Footer-Item">
-                        <a href="#" className="Text_footer">Помощь</a>
+                        <a href="#events" className="Text_footer">Помощь</a>
                     </li>
                     <li className="Footer-Item">
-                        <a href="#" className="Text_footer">Обратная связь</a>
+                        <a href="#events" className="Text_footer">Обратная связь</a>
                     </li>
                     <li className="Footer-Item">
-                        <a href="#" className="Text_footer">Разработчикам</a>
+                        <a href="#events" className="Text_footer">Разработчикам</a>
                     </li>
                     <li className="Footer-Item">
-                        <a href="#" className="Text_footer">Условия использования</a>
+                        <a href="#events" className="Text_footer">Условия использования</a>
                     </li>
                     <li className="Footer-Item">
                         <a target="blank"
@@ -25,7 +25,7 @@ class Footer extends Component {
                     </li>
 
                     <li className="Footer-Item">
-                        <a href="#" className="Text_footer">&copy; 2001–2017 ООО «Яндекс»</a>
+                        <a href="#events" className="Text_footer">&copy; 2001–2017 ООО «Яндекс»</a>
                     </li>
                 </ul>
             </Fragment>

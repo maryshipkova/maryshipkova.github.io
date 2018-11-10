@@ -36,15 +36,15 @@
         }
     }
 
-    &-s {
+    &_s {
 
-        .Card-Type_top,
-        .Card-Type_bottom {
+        .Card-Type-Top,
+        .Card-Type-Bottom {
 
             grid-row-gap: $grid-gap;
         }
 
-        .Card-Type_top {
+        .Card-Type-Top {
             padding: .86rem $grid-gap 1.25rem 1.31rem;
             grid-template-areas: "header header"
                 "source source"
@@ -60,7 +60,7 @@
             }
         }
 
-        .Card-Type_bottom {
+        .Card-Type-Bottom {
             padding: 0 1.25rem 0 1.31rem;
 
             @include responsive(phone) {
@@ -71,14 +71,14 @@
     }
 
 
-    &-m {
+    &_m {
 
-        .Card-Type_top,
-        .Card-Type_bottom {
+        .Card-Type-Top,
+        .Card-Type-Bottom {
             grid-row-gap: 1.33rem;
         }
 
-        .Card-type_top {
+        .Card-Type-Top {
             grid-template-areas:
                 "header header"
                 "source time";
@@ -89,7 +89,7 @@
             }
         }
 
-        .Card-Type_bottom {
+        .Card-Type-Bottom {
             padding: $grid-gap;
 
             @include responsive(phone) {
@@ -103,14 +103,14 @@
 
     }
 
-    &-l {
+    &_l {
 
-        .Card-type_top,
-        .Card-type_bottom {
+        .Card-type-Top,
+        .Card-Type-Bottom {
             grid-row-gap: 1.5rem;
         }
 
-        .Card-Type_top {
+        .Card-Type-Top {
             grid-template-areas: " header header"
                 "source time";
             padding: $grid-gap;
@@ -120,7 +120,7 @@
             }
         }
 
-        .Card-Type_bottom {
+        .Card-Type-Bottom {
             padding: 0 $grid-gap $grid-gap $grid-gap;
 
             @include responsive(phone) {
@@ -148,7 +148,7 @@
             height: .0005rem;
         }
 
-        &~.Card-type_bottom {
+        &~.Card-Type-Bottom {
             &::before {
                 content: "";
                 display: block;
@@ -163,7 +163,7 @@
         }
     }
 
-    &-Info {
+    &_info {
         background-color: $card-color;
         color: $color-dark;
 
@@ -214,7 +214,7 @@
         background-color: #F3F3F3;
         box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.50);
 
-        .Card-Info,.Card-Info::before {
+        .Card_info,.Card_info::before {
             background-color: #F3F3F3;
         }
 

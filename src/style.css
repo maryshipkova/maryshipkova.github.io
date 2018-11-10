@@ -324,56 +324,56 @@ body {
     display: grid;
     grid-template-areas: "description description" "data data";
     position: relative; }
-  .Card-s .Card-Type_top,
-  .Card-s .Card-Type_bottom {
+  .Card_s .Card-Type-Top,
+  .Card_s .Card-Type-Bottom {
     grid-row-gap: 1.25rem; }
-  .Card-s .Card-Type_top {
+  .Card_s .Card-Type-Top {
     padding: 0.86rem 1.25rem 1.25rem 1.31rem;
     grid-template-areas: "header header" "source source" "time time"; }
     @media only screen and (max-width: 37.5em) {
-      .Card-s .Card-Type_top {
+      .Card_s .Card-Type-Top {
         grid-template-areas: "header header" "source time"; } }
     @media only screen and (max-width: 37.5em) {
-      .Card-s .Card-Type_top {
+      .Card_s .Card-Type-Top {
         padding: 1rem; } }
-  .Card-s .Card-Type_bottom {
+  .Card_s .Card-Type-Bottom {
     padding: 0 1.25rem 0 1.31rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-s .Card-Type_bottom {
+      .Card_s .Card-Type-Bottom {
         padding: 0 1rem 0 1rem; } }
-  .Card-m .Card-Type_top,
-  .Card-m .Card-Type_bottom {
+  .Card_m .Card-Type-Top,
+  .Card_m .Card-Type-Bottom {
     grid-row-gap: 1.33rem; }
-  .Card-m .Card-type_top {
+  .Card_m .Card-Type-Top {
     grid-template-areas: "header header" "source time";
     padding: 1.25rem 1.25rem 0.5rem 1.25rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-m .Card-type_top {
+      .Card_m .Card-Type-Top {
         padding: 1rem 1rem 1rem 1rem; } }
-  .Card-m .Card-Type_bottom {
+  .Card_m .Card-Type-Bottom {
     padding: 1.25rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-m .Card-Type_bottom {
+      .Card_m .Card-Type-Bottom {
         padding: 1rem; } }
-  .Card-m .Card_timeText {
+  .Card_m .Card_timeText {
     text-align: right; }
-  .Card-l .Card-type_top,
-  .Card-l .Card-type_bottom {
+  .Card_l .Card-type-Top,
+  .Card_l .Card-Type-Bottom {
     grid-row-gap: 1.5rem; }
-  .Card-l .Card-Type_top {
+  .Card_l .Card-Type-Top {
     grid-template-areas: " header header" "source time";
     padding: 1.25rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-l .Card-Type_top {
+      .Card_l .Card-Type-Top {
         padding: 1rem 1rem 1rem 1rem; } }
-  .Card-l .Card-Type_bottom {
+  .Card_l .Card-Type-Bottom {
     padding: 0 1.25rem 1.25rem 1.25rem; }
     @media only screen and (max-width: 37.5em) {
-      .Card-l .Card-Type_bottom {
+      .Card_l .Card-Type-Bottom {
         padding: 0 1rem 1rem 1rem; } }
-  .Card-l .Card_timeText {
+  .Card_l .Card_timeText {
     text-align: right; }
-  .Card-l .Card-Description {
+  .Card_l .Card-Description {
     margin-right: 1.5rem;
     color: #333333; }
   .Card_critical {
@@ -383,7 +383,7 @@ body {
       content: "";
       display: block;
       height: .0005rem; }
-    .Card_critical ~ .Card-type_bottom::before {
+    .Card_critical ~ .Card-Type-Bottom::before {
       content: "";
       display: block;
       height: 1.25rem;
@@ -393,7 +393,7 @@ body {
       border-top-right-radius: 1.25rem;
       position: absolute;
       top: -1rem; }
-  .Card-Info {
+  .Card_info {
     background-color: #FAFAFA;
     color: #333333; }
   .Card-Header {
@@ -421,7 +421,7 @@ body {
   .Card:hover {
     background-color: #F3F3F3;
     box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5); }
-    .Card:hover .Card-Info, .Card:hover .Card-Info::before {
+    .Card:hover .Card_info, .Card:hover .Card_info::before {
       background-color: #F3F3F3; }
     .Card:hover .Card-HoverIcon {
       display: block;
