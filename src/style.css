@@ -431,9 +431,9 @@ body {
       position: absolute;
       right: 1.25rem;
       z-index: 100; }
-      .Card:hover .Card-HoverIcon_top {
+      .Card:hover .Card-HoverIcon-Top {
         top: 1.25rem; }
-      .Card:hover .Card-HoverIcon_bottom {
+      .Card:hover .Card-HoverIcon-Bottom {
         bottom: 1.25rem; }
 
 .CardData {
@@ -464,21 +464,21 @@ body {
     @media only screen and (max-width: 37.5em) {
       .CardData-Buttons {
         justify-content: space-between; } }
-    .CardData-Buttons_btn {
+    .CardData-Buttons-Item {
       width: 8.25rem;
       height: 3.38rem;
       background: #E5E5E5;
       border-radius: 8px; }
       @media only screen and (max-width: 37.5em) {
-        .CardData-Buttons_btn {
+        .CardData-Buttons-Item {
           height: 2.25rem; } }
-      .CardData-Buttons_btn:first-child {
+      .CardData-Buttons-Item:first-child {
         background: #FFD93E;
         margin-right: 1.13rem; }
         @media only screen and (max-width: 37.5em) {
-          .CardData-Buttons_btn:first-child {
+          .CardData-Buttons-Item:first-child {
             margin-right: .25rem; } }
-      .CardData-Buttons_btn:hover {
+      .CardData-Buttons-Item:hover {
         background: #FFD93E;
         cursor: pointer; }
   .CardData-Music {

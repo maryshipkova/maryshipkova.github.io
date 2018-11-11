@@ -215,7 +215,7 @@
       right: $grid-gap;
       z-index: 100;
 
-      &_top {
+      &-Top {
         top: $grid-gap;
 
         @include responsive(phove) {
@@ -223,7 +223,7 @@
         }
       }
 
-      &_bottom {
+      &-Bottom {
         bottom: $grid-gap;
 
         @include responsive(phove) {
@@ -279,7 +279,7 @@
       justify-content: space-between;
     }
 
-    &_btn {
+    &-Item {
       width: 8.25rem;
       height: 3.38rem;
       background: $button-color;

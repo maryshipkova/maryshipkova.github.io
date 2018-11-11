@@ -212,8 +212,8 @@ class Events extends Component {
                         </div>
                     </div>;
             } else if (event.data.temperature) {
-                innerData = <div className="CardData-Climate">
-                    <div className="CardData-Temperature">
+                innerData = <div className={this.cnCardData('Climate')}>
+                    <div className={this.cnCardData('Temperature')}>
                         <p className={this.cnText('CardData', {type: 'climate'})}>
                             {'Температура: '}
                             <span
@@ -223,7 +223,7 @@ class Events extends Component {
 
                         </p>
                     </div>
-                    <div className="CardData-humidity">
+                    <div className={this.cnCardData('Humidity')}>
                         <p className={this.cnText('CardData', {type: 'climate'})}>
                             {'Влажность: '}
                             <span
@@ -259,38 +259,39 @@ class Events extends Component {
 
                         </div>
                     </div>
-                    <div className="Music-Player">
-                        <div className="Music-Icons">
-                            <div className="Music-Icons-Item">
-                                <svg className="Icon_music">
+                    <div className={this.cnMusic("Player")}>
+                        <div className={this.cnMusic("Icons")}>
+                            <div className={this.cnMusic("Icons-Item")}>
+                                <svg className={this.cnIcon("Music")}>
                                     <use xlinkHref="./assets/Prev.svg#Events"></use>
                                 </svg>
                             </div>
-                            <div className="Music-Icons-Item">
-                                <svg className="Icon_music Icon_rotated">
+                            <div className={this.cnMusic("Icons-Item")}>
+                                <svg className={`${this.cnIcon("Music")} {this.cnIcon("Rotated")}`}>
                                     <use xlinkHref="./assets/Prev.svg#Events"></use>
                                 </svg>
                             </div>
                         </div>
 
-                        <input type="range" className="Music-Player-Range"/>
-                        <div className="CardData-Volume">
-                            <p className="CardData-Music">
+                        <input type="range" className={this.cnMusic("Player-Range")}/>
+                        <div className={this.cnMusic("Volume")}>
+                            <p className={this.cnText('CardData',{type:'music'})}>
                                 {event.data.volume}
                             </p>
                         </div>
                     </div>
                 </div>;
             } else if (event.data.buttons) {
-                innerData = <div className="CardData-Buttons">
-                    <button className="CardData-Buttons_btn">
+                innerData = <div className={this.cnCardData("Buttons")}>
+                    <button className={this.cnCardData("Buttons-Item")}>
                             <span
                                 className={`${this.cnText('CardData', {type: "paragraph"})} ${this.cnText({type: "bold"})}`}>
                                 {event.data.buttons[0]}
                              </span>
                     </button>
-                    <button className="CardData-Buttons_btn">
-                            <span className="CardData_paragraph Text_bold">
+                    <button className={this.cnCardData("Buttons-Item")}>
+                            <span
+                                className={`${this.cnText('CardData', {type: "paragraph"})} ${this.cnText({type: "bold"})}`}>
                                 {event.data.buttons[1]}
                              </span>
                     </button>
@@ -306,12 +307,12 @@ class Events extends Component {
                 {cardData}
             </div> : <Fragment></Fragment>;
         return <div className={this.cnCard({size: event.size})} key={i}>
-            <div className={`${this.cnCard('HoverIcon')} Card-HoverIcon_top`}>
+            <div className={`${this.cnCard('HoverIcon')} ${this.cnCard('HoverIcon-Top')}`}>
                 <svg className={this.cnIcon('Card-Hover')}>
                     <use xlinkHref="./assets/cross.svg#Events"></use>
                 </svg>
             </div>
-            <div className={`${this.cnCard('HoverIcon')} Card-HoverIcon_bottom`}>
+            <div className={`${this.cnCard('HoverIcon')} ${this.cnCard('HoverIcon-Bottom')}`}>
                 <svg className={this.cnIcon('Card-Hover')}>
                     <use xlinkHref="./assets/Next.svg#Events"></use>
                 </svg>
