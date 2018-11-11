@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import './style.css';
-import RichDataImg from './assets/Richdata.png';
 import {cn} from "@bem-react/classname";
 
 
@@ -155,7 +154,7 @@ class Events extends Component {
                 "description": "Робопылесос не смог сменить свое местоположение в течение последних 3 минут. Похоже, ему нужна помощь.",
                 "icon": "cam",
                 "data": {
-                    "image": "get_it_from_mocks_:3.jpg"
+                    "image": "cleaner.jpg"
                 },
                 "size": "l"
             },
@@ -186,14 +185,14 @@ class Events extends Component {
             let innerData = <Fragment></Fragment>;
             if (event.data.type === 'graph') {
                 innerData = <div className={this.cnCardData('Graph')}>
-                    <img className={this.cnCardData('ImageBox-Image')} src={RichDataImg} alt="Richdata.png"
+                    <img className={this.cnCardData('ImageBox-Image')} src={require(`./assets/Richdata.png`)} alt="Richdata.png"
                          touch-action="none"/>
                 </div>;
             } else if (event.data.image) {
                 innerData =
                     <div className={this.cnCardData('ImageBox')}>
                         <div className={this.cnCardData('Image')}>
-                            <img className={this.cnCardData('Image-Item')} src={`./assets/${event.data.image}.jpg`}
+                            <img className={this.cnCardData('Image-Item')} src={require(`./assets/${event.data.image}`)}
                                  alt={event.data.image} touch-action="none"/>
                         </div>
                         <div className={this.cnCardData('ImageBox-Settings')}>
@@ -263,12 +262,12 @@ class Events extends Component {
                         <div className={this.cnMusic("Icons")}>
                             <div className={this.cnMusic("Icons-Item")}>
                                 <svg className={this.cnIcon("Music")}>
-                                    <use xlinkHref="./assets/Prev.svg#Events"></use>
+                                    <use xlinkHref= {`${require(`./assets/Prev.svg`)}#Events`}></use>
                                 </svg>
                             </div>
                             <div className={this.cnMusic("Icons-Item")}>
-                                <svg className={`${this.cnIcon("Music")} {this.cnIcon("Rotated")}`}>
-                                    <use xlinkHref="./assets/Prev.svg#Events"></use>
+                                <svg className={`${this.cnIcon("Music")} ${this.cnIcon("Rotated")}`}>
+                                    <use xlinkHref={`${require(`./assets/Prev.svg`)}#Events`}></use>
                                 </svg>
                             </div>
                         </div>
@@ -309,12 +308,12 @@ class Events extends Component {
         return <div className={this.cnCard({size: event.size})} key={i}>
             <div className={`${this.cnCard('HoverIcon')} ${this.cnCard('HoverIcon-Top')}`}>
                 <svg className={this.cnIcon('Card-Hover')}>
-                    <use xlinkHref="./assets/cross.svg#Events"></use>
+                    <use xlinkHref={`${require(`./assets/cross.svg`)}#Events`}></use>
                 </svg>
             </div>
             <div className={`${this.cnCard('HoverIcon')} ${this.cnCard('HoverIcon-Bottom')}`}>
                 <svg className={this.cnIcon('Card-Hover')}>
-                    <use xlinkHref="./assets/Next.svg#Events"></use>
+                    <use xlinkHref={`${require(`./assets/Next.svg`)}#Events`}></use>
                 </svg>
             </div>
 
@@ -322,7 +321,7 @@ class Events extends Component {
                 <div className={this.cnCard('Header')}>
                     <div className={this.cnCard('Icon')}>
                         <svg className={this.cnIcon('Card')} viewBox="-10 -15 62 65" preserveAspectRatio="xMinYMid">
-                            <use xlinkHref={`./assets/${event.icon}.svg#Events`}></use>
+                            <use xlinkHref={`${require(`./assets/${event.icon}.svg`)}#Events`}></use>
                         </svg>
                     </div>
                     <div className={this.cnCard('Title')}>

@@ -243,11 +243,6 @@
   &-ImageBox {
     overflow: hidden;
 
-    &-Image {
-      width: 100%;
-      border-radius: $grid-gap;
-    }
-
     &-Settings {
       display: none;
 
@@ -262,6 +257,16 @@
         flex: 1 0 100%;
       }
     }
+  }
+
+  &-Image {
+    width: 100%;
+    border-radius: $grid-gap;
+
+    &-Item {
+      width: 100%;
+    }
+
   }
 
   &-Climate {

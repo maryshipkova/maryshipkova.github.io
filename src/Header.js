@@ -16,8 +16,8 @@ class Header extends Component {
                 </div>
                 <nav className={this.cnHeader('Nav')}>
                     <label htmlFor="header-toggle" className={this.cnHeader('Nav-Toggle')}>
-                        <img srcSet="./assets/icon_list_m-min.png 1x, ./assets/icon_list_m@2x-min.png 2x"
-                             src="./assets/icon_list_m-min.png"
+                        <img srcSet={`${require("./assets/icon_list_m-min.png")} 1x, ${require("./assets/icon_list_m@2x-min.png")} 2x`}
+                             src={require(`./assets/icon_list_m-min.png`)}
                              alt="Icon_headerNav" className={this.cnIcon('HeaderNav')}/>
                     </label>
                     <input type="checkbox" className={this.cnHeader('Nav-Checkbox')} id="header-toggle"/>
