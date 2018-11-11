@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
-import Header from './Header';
 import * as serviceWorker from './serviceWorker';
-import Footer from "./Footer";
-import Events from "./Event";
+import {App as AppDesktop} from "./components/App@desktop";
+import {App as AppMobile} from "./components/App@mobile";
+import DeviceDetector from 'device-detector-js';
 
-ReactDOM.render(<Header />, document.querySelector('.Header'));
-ReactDOM.render(<Events />, document.querySelector('#events'));
-// ReactDOM.render(<Header />, document.querySelector('.Grid'));
-ReactDOM.render(<Footer />, document.querySelector('.Footer'));
+
+const ua = new DeviceDetector().parse(navigator.userAgent) || {};
+const device = ua.device || { type: 'desktop' };
+
+ReactDOM.render(
+    device.type === 'desktop' ? <AppDesktop /> : <AppMobile />,
+    document.querySelector('.Grid')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import './style.css';
+import '../style.css';
 import {cn} from "@bem-react/classname";
 
 
@@ -185,24 +185,28 @@ class Events extends Component {
             let innerData = <Fragment></Fragment>;
             if (event.data.type === 'graph') {
                 innerData = <div className={this.cnCardData('Graph')}>
-                    <img className={this.cnCardData('ImageBox-Image')} src={require(`./assets/Richdata.png`)} alt="Richdata.png"
+                    <div className={this.cnCardData('ImageBox')}>
+                        <div className={this.cnCardData('Image')}>
+                    <img className={this.cnCardData('Image-Item')} src={require(`../assets/Richdata.png`)} alt="Richdata.png"
                          touch-action="none"/>
+                        </div>
+                    </div>
                 </div>;
             } else if (event.data.image) {
                 innerData =
                     <div className={this.cnCardData('ImageBox')}>
                         <div className={this.cnCardData('Image')}>
-                            <img className={this.cnCardData('Image-Item')} src={require(`./assets/${event.data.image}`)}
+                            <img className={this.cnCardData('Image-Item')} src={require(`../assets/${event.data.image}`)}
                                  alt={event.data.image} touch-action="none"/>
                         </div>
                         <div className={this.cnCardData('ImageBox-Settings')}>
                             <div className={this.cnCardData('ImageBox-Settings', {type: 'zoom'})}>
                                     <span className={this.cnText('Card', {type: 'settings'})}>Приближение: <span
-                                        className={this.cnText('Card-', {type: 'settings_zoom'})}>100</span>%</span>
+                                        className={this.cnText('Card', {type: 'settings_zoom'})}>100</span>%</span>
                             </div>
                             <div className={this.cnCardData('ImageBox-Settings', {type: 'brightness'})}>
                                     <span className={this.cnText('Card', {type: 'settings'})}>Яркость: <span
-                                        className={this.cnText('Card-', {type: 'settings_brightness'})}>100</span>%</span>
+                                        className={this.cnText('Card', {type: 'settings_brightness'})}>100</span>%</span>
                             </div>
                             <input type="range"
                                    className={`${this.cnMusic('Track-Range')} ${this.cnCardData('Settings-Range')}`}
@@ -262,12 +266,12 @@ class Events extends Component {
                         <div className={this.cnMusic("Icons")}>
                             <div className={this.cnMusic("Icons-Item")}>
                                 <svg className={this.cnIcon("Music")}>
-                                    <use xlinkHref= {`${require(`./assets/Prev.svg`)}#Events`}></use>
+                                    <use xlinkHref= {`${require(`../assets/Prev.svg`)}#Events`}></use>
                                 </svg>
                             </div>
                             <div className={this.cnMusic("Icons-Item")}>
                                 <svg className={`${this.cnIcon("Music")} ${this.cnIcon("Rotated")}`}>
-                                    <use xlinkHref={`${require(`./assets/Prev.svg`)}#Events`}></use>
+                                    <use xlinkHref={`${require(`../assets/Prev.svg`)}#Events`}></use>
                                 </svg>
                             </div>
                         </div>
@@ -308,12 +312,12 @@ class Events extends Component {
         return <div className={this.cnCard({size: event.size})} key={i}>
             <div className={`${this.cnCard('HoverIcon')} ${this.cnCard('HoverIcon-Top')}`}>
                 <svg className={this.cnIcon('Card-Hover')}>
-                    <use xlinkHref={`${require(`./assets/cross.svg`)}#Events`}></use>
+                    <use xlinkHref={`${require(`../assets/cross.svg`)}#Events`}></use>
                 </svg>
             </div>
             <div className={`${this.cnCard('HoverIcon')} ${this.cnCard('HoverIcon-Bottom')}`}>
                 <svg className={this.cnIcon('Card-Hover')}>
-                    <use xlinkHref={`${require(`./assets/Next.svg`)}#Events`}></use>
+                    <use xlinkHref={`${require(`../assets/Next.svg`)}#Events`}></use>
                 </svg>
             </div>
 
@@ -321,7 +325,7 @@ class Events extends Component {
                 <div className={this.cnCard('Header')}>
                     <div className={this.cnCard('Icon')}>
                         <svg className={this.cnIcon('Card')} viewBox="-10 -15 62 65" preserveAspectRatio="xMinYMid">
-                            <use xlinkHref={`${require(`./assets/${event.icon}.svg`)}#Events`}></use>
+                            <use xlinkHref={`${require(`../assets/${event.icon}.svg`)}#Events`}></use>
                         </svg>
                     </div>
                     <div className={this.cnCard('Title')}>

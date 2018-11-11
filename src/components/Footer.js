@@ -1,5 +1,5 @@
-import React, {Component, Fragment} from 'react';
-import './style.css';
+import React, {Component} from 'react';
+import '../style.css';
 import {cn} from '@bem-react/classname'
 
 class Footer extends Component {
@@ -7,7 +7,7 @@ class Footer extends Component {
     cnText = cn('Text');
     render() {
         return (
-            <Fragment>
+            <footer className="Footer">
                 <ul className={this.cnFooter('List')}>
                     <li className={this.cnFooter('Item')}>
                         <a href="#events" className={this.cnText({type:'footer'})}>Помощь</a>
@@ -31,7 +31,7 @@ class Footer extends Component {
                         <a href="#events" className={this.cnText({type:'footer'})}>&copy; 2001–2017 ООО «Яндекс»</a>
                     </li>
                 </ul>
-            </Fragment>
+            </footer>
 
         );
     }
